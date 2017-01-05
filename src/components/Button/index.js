@@ -1,5 +1,6 @@
 import React, { PropTypes } from "react"
 import {StyleSheet, css} from "aphrodite"
+import cn from "classnames"
 
 import StyleVars from "../../style-vars"
 var {colorPrimary, colorPrimaryDark, colorNeutralLight, colorSecondary, colorSecondaryDark} = StyleVars
@@ -57,16 +58,19 @@ var styles = StyleSheet.create({
   },
 })
 
-const Button = ({ secondary, light, big, ...otherProps }) => (
+const Button = ({ className, secondary, light, big, ...otherProps }) => (
   <span
     role="button"
     { ...otherProps }
-    className={ css(
-      styles.button,
-      secondary && styles.secondary,
-      light && styles.light,
-      big && styles.big
-    )}  />
+    className={cn({
+      [className]: className,
+      [css(
+        styles.button,
+        secondary ? styles.secondary : false,
+        light ? styles.light : false,
+        big ? styles.big : false
+      )]: true 
+    })}  />
 )
 
 Button.propTypes = {
