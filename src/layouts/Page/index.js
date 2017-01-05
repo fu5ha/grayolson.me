@@ -3,10 +3,89 @@ import Helmet from "react-helmet"
 import warning from "warning"
 import { BodyContainer, joinUri, Link } from "phenomic"
 
+import {StyleSheet,css} from "aphrodite"
+import StyleVars from "../../style-vars"
+import StyleHelpers from "../../style-helpers"
+
 import Button from "../../components/Button"
 import Loading from "../../components/Loading"
 
-import styles from "./index.css"
+var styles = StyleSheet.create({
+  page: {
+    display: 'flex',
+    'flex-direction': 'column',
+  },
+
+  wrapper: {
+    display: 'flex',
+    'flex-direction': 'column',
+    'align-self': 'center',
+    width: '100%',
+    'max-width': StyleHelpers.toCSS(StyleVars.maxWidth),
+    padding: '1rem 0.75rem'
+  },
+
+  hero: {
+    /* fallback, mainly visible when hero image is loading */
+    'background-color': StyleVars.colorSecondary,
+    /* fallback when there is no hero image */
+    background:'radial-gradient(' + '\n' +
+        'ellipse at 50% 50%,' + '\n' +
+        StyleHelpers.lum(StyleVars.colorSecondary, 0.1) + ' 15%,' +'\n' +
+        StyleVars.colorSecondary + '70%' + '\n' +
+      ')'
+  },
+
+  header: {
+    display: 'flex',
+    'flex-direction': 'column',
+    padding: '10vh 0',
+    'text-align': 'center',
+    background: 'linear-gradient(' + '\n' +
+      'to bottom,' + '\n' +
+      StyleVars.colorPrimaryDark + ',\n' +
+      StyleHelpers.hexToRGBA(StyleVars.colorPrimary, 0.2) + '\n' +
+    ')'
+  },
+
+  heading: {
+    color: StyleVars.colorNeutralLight,
+    'text-shadow':'\n' +
+      '0 0 10px ' + StyleVars.colorPrimaryDark + ',\n' +
+      '0 0 6px ' + StyleVars.colorNeutralDark + ',\n' +
+      '0 0 2px ' + StyleVars.colorNeutralDark + ',\n' +
+    ';',
+    'letter-spacing': '1px',
+  },
+
+  cta: {
+    'margin-top': '2rem',
+  },
+
+  pageContent: {
+    margin: '1rem 0',
+  },
+
+  body: {
+    a: {
+      color: StyleVars.colorPrimary,
+      transition: 'all 0.2s',
+      'text-decoration': 'none',
+      'border-bottom': '1px solid transparent',
+
+      ':hover': {
+        opacity: 1,
+        color: 'color(' + StyleVars.colorPrimary + ' l(- 5%))',
+        'border-bottom-color': StyleVars.colorPrimary,
+      }
+    },
+
+    /* handy for content */
+    img: {
+      'max-width': '100%',
+    },
+  },
+})
 
 const Page = (
   {
@@ -46,25 +125,25 @@ const Page = (
   ]
 
   return (
-    <div className={ styles.page }>
+    <div className={ css(styles.page) }>
       <Helmet
         title={ metaTitle }
         meta={ meta }
       />
       {
         <div
-          className={ styles.hero }
+          className={ css(styles.hero) }
           style={ head.hero && {
             background: `#111 url(${ head.hero }) 50% 50% / cover`,
           } }
         >
-          <div className={ styles.header }>
-            <div className={ styles.wrapper }>
-              <h1 className={ styles.heading }>{ head.title }</h1>
+          <div className={ css(styles.header) }>
+            <div className={ css(styles.wrapper) }>
+              <h1 className={ css(styles.heading) }>{ head.title }</h1>
               {
                 head.cta &&
                 <Link to={ head.cta.link }>
-                  <Button className={ styles.cta } light { ...head.cta.props }>
+                  <Button className={ css(styles.cta) } light { ...head.cta.props }>
                     { head.cta.label }
                   </Button>
                 </Link>
@@ -73,9 +152,9 @@ const Page = (
           </div>
         </div>
       }
-      <div className={ styles.wrapper + " " + styles.pageContent }>
+      <div className={ css(styles.wrapper, styles.pageContent) }>
         { header }
-        <div className={ styles.body }>
+        <div className={ css(styles.body) }>
           {
             isLoading
             ? <Loading />

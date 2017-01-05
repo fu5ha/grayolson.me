@@ -1,9 +1,18 @@
 import React, { PropTypes } from "react"
+import {StyleSheet, css} from "aphrodite"
 
 import LatestPosts from "../../components/LatestPosts"
 import Page from "../Page"
 
-import styles from "./index.css"
+var styles = StyleSheet.create({
+  header: {
+    display: 'flex',
+    'justify-content': 'center',
+    opacity: 0.6,
+    'font-size': '0.8rem',
+    'margin-bottom': '1rem',
+  }
+})
 
 const Post = (props) => {
   // it's up to you to choose what to do with this layout ;)
@@ -14,7 +23,7 @@ const Post = (props) => {
       { ...props }
       header={
         <div>
-          <header className={ styles.header }>
+          <header className={ css(styles.header) }>
             {
               pageDate &&
               <time key={ pageDate.toISOString() }>

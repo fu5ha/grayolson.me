@@ -1,9 +1,18 @@
 import React, { PropTypes } from "react"
-import {css} from "aphrodite"
+import {StyleSheet, css} from "aphrodite"
 
 import PagePreview from "../PagePreview"
 
-import styles from "./styles"
+var styles = StyleSheet.create({
+  list: {
+    display: 'flex',
+    'flex-direction': 'column',
+
+    'list-style': 'none',
+    padding: 0,
+  }
+})
+
 
 const PagesList = ({ pages }) => {
   return (

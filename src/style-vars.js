@@ -3,14 +3,14 @@ var styleVars = {
         val: 60,
         type: 'rem'
     },
-    colorPrimaryDark: "#107491",
-    colorPrimary: "#007acc",
-    colorSecondaryDark: "#22846C",
-    colorSecondary: "#46BE77",
-    colorNeutralDark: "#111",
-    colorNeutral: "#8C8D91",
-    colorNeutralLight: "#FBFCFC",
-    colorText: "#555"
+    colorPrimaryDark: "#EE4266",
+    colorPrimary: "#E66C7E",
+    colorSecondaryDark: "#558C99",
+    colorSecondary: "#89D2DC",
+    colorNeutralDark: "#1D191F",
+    colorNeutral: "#2F2F2F",
+    colorNeutralLight: "#FCFBFB",
+    colorText: "#1D191F"
 }
 
 export default styleVars
