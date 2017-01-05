@@ -1,6 +1,13 @@
 import React, { PropTypes } from "react"
-import {css} from "aphrodite"
-import styles from "./styles"
+import {StyleSheet, css} from "aphrodite"
+
+var styles = StyleSheet.create({
+  container: {
+    'min-height': '100vh',
+    display: 'flex',
+    'flex-direction': 'column',
+  }
+})
 
 const Container = (props) => (
   <div className={ css(styles.container) }>

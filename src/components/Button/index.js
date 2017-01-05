@@ -44,6 +44,7 @@ var styles = StyleSheet.create({
     border: '1px solid ' + colorNeutralLight,
 
     ':hover': {
+      'text-decoration': 'none',
       color: colorNeutralLight,
       border: '1px solid ' + colorNeutralLight,
       background: hexToRGBA(colorNeutralLight, 0.3),
