@@ -2,16 +2,21 @@ import React, { PropTypes } from "react"
 import Helmet from "react-helmet"
 import warning from "warning"
 import { BodyContainer, joinUri, Link } from "phenomic"
+import Header from "../../components/Header"
+import Content from "../../components/Content"
+import Footer from "../../components/Footer"
 
 import {StyleSheet,css} from "aphrodite"
-import StyleVars from "../../style-vars"
-import StyleHelpers from "../../style-helpers"
+import {mainStyles, maxWidth, colorPrimary, colorPrimaryDark, colorNeutralLight, colorNeutralDark, colorSecondary} from "../../style-vars"
+import {toCSS, lum, hexToRGBA} from "../../style-helpers"
 
 import Button from "../../components/Button"
 import Loading from "../../components/Loading"
 
 var styles = StyleSheet.create({
   page: {
+    ...mainStyles.html,
+    ...mainStyles.text,
     display: 'flex',
     'flex-direction': 'column',
   },
@@ -21,18 +26,18 @@ var styles = StyleSheet.create({
     'flex-direction': 'column',
     'align-self': 'center',
     width: '100%',
-    'max-width': StyleHelpers.toCSS(StyleVars.maxWidth),
+    'max-width': toCSS(maxWidth),
     padding: '1rem 0.75rem'
   },
 
   hero: {
     /* fallback, mainly visible when hero image is loading */
-    'background-color': StyleVars.colorSecondary,
+    'background-color': colorSecondary,
     /* fallback when there is no hero image */
     background:'radial-gradient(' + '\n' +
         'ellipse at 50% 50%,' + '\n' +
-        StyleHelpers.lum(StyleVars.colorSecondary, 0.1) + ' 15%,' +'\n' +
-        StyleVars.colorSecondary + '70%' + '\n' +
+        lum(colorSecondary, 0.1) + ' 15%,' +'\n' +
+        colorSecondary + '70%' + '\n' +
       ')'
   },
 
@@ -43,17 +48,17 @@ var styles = StyleSheet.create({
     'text-align': 'center',
     background: 'linear-gradient(' + '\n' +
       'to bottom,' + '\n' +
-      StyleVars.colorPrimaryDark + ',\n' +
-      StyleHelpers.hexToRGBA(StyleVars.colorPrimary, 0.2) + '\n' +
+      colorPrimary + ',\n' +
+      hexToRGBA(colorPrimary, 0.2) + '\n' +
     ')'
   },
 
   heading: {
-    color: StyleVars.colorNeutralLight,
+    color: colorNeutralLight,
     'text-shadow':'\n' +
-      '0 0 10px ' + StyleVars.colorPrimaryDark + ',\n' +
-      '0 0 6px ' + StyleVars.colorNeutralDark + ',\n' +
-      '0 0 2px ' + StyleVars.colorNeutralDark + ',\n' +
+      '0 0 10px ' + colorPrimaryDark + ',\n' +
+      '0 0 6px ' + colorNeutralDark + ',\n' +
+      '0 0 2px ' + colorNeutralDark + ',\n' +
     ';',
     'letter-spacing': '1px',
   },
@@ -68,15 +73,15 @@ var styles = StyleSheet.create({
 
   body: {
     a: {
-      color: StyleVars.colorPrimary,
+      color: colorPrimary,
       transition: 'all 0.2s',
       'text-decoration': 'none',
       'border-bottom': '1px solid transparent',
 
       ':hover': {
         opacity: 1,
-        color: 'color(' + StyleVars.colorPrimary + ' l(- 5%))',
-        'border-bottom-color': StyleVars.colorPrimary,
+        color: 'color(' + colorPrimary + ' l(- 5%))',
+        'border-bottom-color': colorPrimary,
       }
     },
 
@@ -125,6 +130,8 @@ const Page = (
   ]
 
   return (
+    <Content>
+    <Header />
     <div className={ css(styles.page) }>
       <Helmet
         title={ metaTitle }
@@ -165,6 +172,8 @@ const Page = (
         { footer }
       </div>
     </div>
+    <Footer />
+    </Content>
   )
 }
 

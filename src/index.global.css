@@ -23,23 +23,6 @@ body {
 }
 
 /*
- * page styles
- */
-html {
-  min-height: 100%;
-  background: color(var(--colorPrimary) l(99%));
-}
-
-body {
-  color: var(--colorText);
-  font-size: 1rem;
-  line-height: 1.5rem;
-
-  /* system font https://medium.com/designing-medium/system-shock-6b1dc6d6596f */
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-}
-
-/*
  * .phenomic-HeadingAnchor
  *
  * anchors for markdown headings, generated via markdown renderer, so require
@@ -57,7 +40,7 @@ body {
 }
 
 .phenomic-HeadingAnchor {
-  display: inline-block;
+  display: none;
   text-align: center;
   margin-left: calc(-1 * (var(--phenomic-HeadingAnchor-width) + var(--phenomic-HeadingAnchor-margin)));
   margin-right: var(--phenomic-HeadingAnchor-margin);
@@ -78,7 +61,7 @@ a {
   text-decoration: none;
 
   &:hover {
-    text-decoration: underline;
+    text-decoration: none;
   }
 }
 

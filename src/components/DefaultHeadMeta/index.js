@@ -5,10 +5,6 @@ const DefaultHeadMeta = (props, { metadata: { pkg } }) => (
   <div hidden>
     <Helmet
       meta={ [
-        {
-          name: "generator", content: `${
-          process.env.PHENOMIC_NAME } ${ process.env.PHENOMIC_VERSION }`,
-        },
         { property: "og:site_name", content: pkg.name },
         { name: "twitter:site", content: `@${ pkg.twitter }` },
         ...props.meta ? props.meta : [],

@@ -2,10 +2,8 @@ import React, { PropTypes } from "react"
 import {StyleSheet, css} from "aphrodite"
 import cn from "classnames"
 
-import StyleVars from "../../style-vars"
-var {colorPrimary, colorPrimaryDark, colorNeutralLight, colorSecondary, colorSecondaryDark} = StyleVars
-import StyleHelpers from '../../style-helpers'
-var hexToRGBA = StyleHelpers.hexToRGBA
+import {colorPrimary, colorPrimaryDark, colorNeutralLight, colorSecondary, colorSecondaryDark} from "../../style-vars"
+import {hexToRGBA} from '../../style-helpers'
 
 var styles = StyleSheet.create({
   button: {

@@ -2,9 +2,10 @@ import React, { PropTypes } from "react"
 import { Link } from "phenomic"
 import Svg from "react-svg-inline"
 import {StyleSheet, css} from "aphrodite"
+import Scrollchor from "react-scrollchor"
 
-import StyleVars from "../../style-vars"
-import StyleHelpers from "../../style-helpers"
+import {colorNeutral} from "../../style-vars"
+import {toRem, toCSS} from "../../style-helpers"
 
 import twitterSvg from "../icons/iconmonstr-twitter-1.svg"
 import gitHubSvg from "../icons/iconmonstr-github-1.svg"
@@ -12,11 +13,16 @@ import gitHubSvg from "../icons/iconmonstr-github-1.svg"
 var pseudo = {
       color: 'inherit',
       opacity: 1,
-      'border-bottom-color': StyleVars.colorNeutralLight,
+      'border-bottom-color': colorNeutral,
 }
 
 var navItemPadding = {
   val: 0.5,
+  type: 'rem'
+}
+
+var navMaxWidth = {
+  val: 40,
   type: 'rem'
 }
 
@@ -27,33 +33,23 @@ var styles = StyleSheet.create({
     left: 0,
     right: 0,
 
-    color: StyleVars.colorNeutralLight,
+    color: colorNeutral,
   },
 
   nav: {
     display: 'flex',
     'flex-direction': 'row',
     'justify-content': 'space-between',
-    'max-width': StyleHelpers.toRem(StyleVars.maxWidth.val + (navItemPadding.val * 2)),
+    'max-width': toRem(navMaxWidth.val + (navItemPadding.val * 2)),
     margin: '0 auto',
     padding: 0,
     'line-height': '3rem',
   },
 
-  navPart1: {
-    display: 'flex',
-    'flex-direction': 'row',
-  },
-
-  navPart2: {
-    display: 'flex',
-    'flex-direction': 'row',
-  },
-
   link: {
     display: 'flex',
     'align-items': 'center',
-    padding: '0 ' + StyleHelpers.toCSS(navItemPadding),
+    padding: '0 ' + toCSS(navItemPadding),
     color: 'inherit',
     'text-decoration': 'none', 
     opacity: 0.6,
@@ -74,18 +70,27 @@ var styles = StyleSheet.create({
   },
 })
 
+function easeInOutQuad(x, t, b, c, d) {
+  if ((t/=d/2) < 1) return c/2*t*t + b;
+  return -c/2 * ((--t)*(t-2) - 1) + b;
+}
+
 const Header = (props, { metadata: { pkg } }) => (
   <header className={ css(styles.header) }>
     <nav className={ css(styles.nav) }>
-      <div className={ css(styles.navPart1) }>
         <Link
           className={ css(styles.link) }
           to={ "/" }
         >
           { "Home" }
         </Link>
-      </div>
-      <div className={ css(styles.navPart2) }>
+        <Scrollchor
+          className={ css(styles.link) }
+          to="#test"
+          animate={{offset:-100, easing: easeInOutQuad}}
+        >
+          { "Test" }
+        </Scrollchor>
         {
           pkg.twitter &&
           <a
@@ -106,7 +111,6 @@ const Header = (props, { metadata: { pkg } }) => (
             { "GitHub" }
           </a>
         }
-      </div>
     </nav>
   </header>
 )

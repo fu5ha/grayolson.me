@@ -3,10 +3,11 @@ import Helmet from "react-helmet"
 import { BodyContainer, joinUri } from "phenomic"
 import { StyleSheet, css } from "aphrodite"
 
+import {mainStyles} from "../../style-vars"
+
 const styles = StyleSheet.create({
-    red: {
-        color: 'red'
-    }
+    html: mainStyles.html,
+    body: mainStyles.text
 })
 
 const LandingPage = (
@@ -41,10 +42,10 @@ const LandingPage = (
     ]
   
     return(
-        <div className={css(styles.red)}>
+        <div className={css(styles.html)}>
             <Helmet title={ metaTitle }
                     meta={ meta } />
-            <BodyContainer>{ body }</BodyContainer>
+            <BodyContainer className={css(styles.body)} >{ body }</BodyContainer>
         </div>
     )
 }
