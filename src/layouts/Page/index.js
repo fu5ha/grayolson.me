@@ -2,9 +2,6 @@ import React, { PropTypes } from "react"
 import Helmet from "react-helmet"
 import warning from "warning"
 import { BodyContainer, joinUri, Link } from "phenomic"
-import Header from "../../components/Header"
-import Content from "../../components/Content"
-import Footer from "../../components/Footer"
 
 import {StyleSheet,css} from "aphrodite"
 import {mainStyles, maxWidth, colorPrimary, colorPrimaryDark, colorNeutralLight, colorNeutralDark, colorSecondary} from "../../style-vars"
@@ -12,6 +9,9 @@ import {toCSS, lum, hexToRGBA} from "../../style-helpers"
 
 import Button from "../../components/Button"
 import Loading from "../../components/Loading"
+import Header from "../../components/Header"
+import Content from "../../components/Content"
+import Footer from "../../components/Footer"
 
 var styles = StyleSheet.create({
   page: {
@@ -131,12 +131,12 @@ const Page = (
 
   return (
     <Content>
-    <Header />
     <div className={ css(styles.page) }>
       <Helmet
         title={ metaTitle }
         meta={ meta }
       />
+      <Header />
       {
         <div
           className={ css(styles.hero) }
@@ -168,11 +168,10 @@ const Page = (
             : <BodyContainer>{ body }</BodyContainer>
           }
         </div>
-        { children }
         { footer }
       </div>
+      <Footer />
     </div>
-    <Footer />
     </Content>
   )
 }

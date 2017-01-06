@@ -1,9 +1,25 @@
 import {lum} from "./style-helpers"
 
 export var maxWidth = {
-        val: 60,
-        type: 'rem'
-    }
+    val: 60,
+    type: 'rem'
+}
+export var h1Size = {
+    val: 8.0,
+    type: 'rem'
+}
+export const FjallaOne = {
+    fontFamily: 'FjallaOne',
+    fontStyle: "normal",
+    fontWeight: "400",
+    src: "local('Fjalla One'), local('FjallaOne-Regular'), url(https://fonts.gstatic.com/s/fjallaone/v4/SHXJdWnWW6HDq-6DpcG8PwsYbbCjybiHxArTLjt7FRU.woff2) format('woff2')"
+}
+export const Lato = {
+    fontFamily: 'Lato',
+    fontStyle: "normal",
+    fontWeight: "400",
+    src: "local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v11/8qcEw_nrk_5HEcCpYdJu8BTbgVql8nDJpwnrE27mub0.woff2) format('woff2')"
+}
 export var colorPrimaryDark =  "#84132B"
 export var colorPrimary = "#E66C7E"
 export var colorDark = "3C0511"
@@ -13,6 +29,7 @@ export var colorNeutralDark = "#1D191F"
 export var colorNeutral = "#2F2F2F"
 export var colorNeutralLight = "#FFF"
 export var colorText = "#1D191F"
+export var colorTextLight = "#8f8f8f"
 
 export var mainStyles = {
     text: {

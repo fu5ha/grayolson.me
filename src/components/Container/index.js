@@ -6,17 +6,21 @@ var styles = StyleSheet.create({
     'min-height': '100vh',
     display: 'flex',
     'flex-direction': 'column',
-  }
+  },
+  row: {
+    'flex-direction': 'row',
+  },
 })
 
 const Container = (props) => (
-  <div className={ css(styles.container) }>
+  <div className={ css(styles.container, props.row && styles.row) }>
     { props.children }
   </div>
 )
 
 Container.propTypes = {
   children: PropTypes.node,
+  row: PropTypes.bool
 }
 
 export default Container
