@@ -89,7 +89,6 @@ const Header = (props, { metadata: { pkg } }) => (
             href={ `https://twitter.com/${pkg.twitter}` }
             className={ css(styles.link) }
           >
-            <Svg svg={ twitterSvg } cleanup />
             { "Twitter" }
           </a>
         }
@@ -99,7 +98,6 @@ const Header = (props, { metadata: { pkg } }) => (
             href={ pkg.repository }
             className={ css(styles.link) }
           >
-            <Svg svg={ gitHubSvg } cleanup />
             { "GitHub" }
           </a>
         }
