@@ -1,0 +1,3 @@
+[submodule "content/assets/asteroids"]
+	path = content/assets/asteroids
+	url = https://github.com/termhn/p5.asteroids.git
