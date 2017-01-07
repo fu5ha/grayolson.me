@@ -9,9 +9,9 @@ import routes from "../src/routes.js"
 import store from "../src/store.js"
 import { StyleSheet } from  "aphrodite"
 
-if (window._aphrodite) {
-  StyleSheet.rehydrate(window._aphrodite)
-}
+// if (window._aphrodite) {
+//   StyleSheet.rehydrate(window._aphrodite)
+// }
 
 phenomicClient({ metadata, routes, store })
 
