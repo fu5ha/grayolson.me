@@ -1,14 +1,10 @@
 import React, { PropTypes } from "react"
 import { Link } from "phenomic"
-import Svg from "react-svg-inline"
 import {StyleSheet, css} from "aphrodite"
 import Scrollchor from "react-scrollchor"
 
 import {colorText,Lato} from "../../style-vars"
 import {toRem, toCSS} from "../../style-helpers"
-
-import twitterSvg from "../icons/iconmonstr-twitter-1.svg"
-import gitHubSvg from "../icons/iconmonstr-github-1.svg"
 
 var pseudo = {
       color: 'inherit',
