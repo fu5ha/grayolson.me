@@ -7,11 +7,11 @@ import phenomicClient from "phenomic/lib/client"
 import metadata from "../src/metadata.js"
 import routes from "../src/routes.js"
 import store from "../src/store.js"
-import { StyleSheet } from  "aphrodite"
+// import { StyleSheet } from  "aphrodite"
 
-if (window._aphrodite) {
-  StyleSheet.rehydrate(window._aphrodite)
-}
+// if (window._aphrodite) {
+//   StyleSheet.rehydrate(window._aphrodite)
+// }
 
 phenomicClient({ metadata, routes, store })
 
