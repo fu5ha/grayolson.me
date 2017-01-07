@@ -1,4 +1,4 @@
 ---
-title:
+title: Asteroids
 layout: Asteroids
 ---
