@@ -14,12 +14,13 @@ class Asteroids extends React.Component {
 
     componentDidMount () {
         var asteroidsFrame = document.getElementById('asteroids-frame')
-        setTimeout(asteroidsFrame.focus(), 20)
+        asteroidsFrame.focus();
+        setTimeout(asteroidsFrame.focus, 200)
         asteroidsFrame.onblur = function() {
             asteroidsFrame.focus();
         }
     }
-
+    
     render() { 
             
         const {
