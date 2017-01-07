@@ -1,8 +1,32 @@
 import React, { PropTypes } from "react"
+import {StyleSheet, css} from "aphrodite"
 
 import Page from "../Page"
 
-import styles from "./index.css"
+const styles = StyleSheet.create({
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    minHeight: '50vh',
+    padding: '1rem 0',
+  },
+
+  oops: {
+    fontSize: '4rem',
+    lineHeight: '4rem',
+    color: '#ddd',
+  },
+
+  title: {
+    margin: '4rem 0',
+    fontSize: '2rem',
+    lineHeight: '3rem',
+    textAlign: 'center',
+  },
+})
+
 
 const PageError = ({ error, errorText }) => (
   <Page
@@ -11,10 +35,10 @@ const PageError = ({ error, errorText }) => (
       hero: "https://farm8.staticflickr.com/7559/16101654539_bee5151340_k.jpg",
     }}
   >
-    <div className={ styles.container }>
-      <div className={ styles.oops }>{ "😱 Oooops!" }</div>
-      <div className={ styles.text }>
-        <p className={ styles.title }>
+    <div className={ css(styles.container) }>
+      <div className={ css(styles.oops) }>{ "😱 Oooops!" }</div>
+      <div className={ css(styles.text) }>
+        <p className={ css(styles.title) }>
           <strong>{ error }</strong>
           { " " }
           { errorText }
@@ -25,7 +49,6 @@ const PageError = ({ error, errorText }) => (
             { "It seems you found a broken link. " }
             { "Sorry about that. " }
             <br />
-            { "Do not hesitate to report this page 😁." }
           </div>
         }
       </div>

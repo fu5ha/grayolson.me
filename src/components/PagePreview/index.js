@@ -61,7 +61,7 @@ const PagePreview = ({ __url, title, date, description }) => {
         { " " }
       </div>
       <Link to={ __url } className={ css(styles.readMore) }>
-        <Button secondary>{ "Read More →" }</Button>
+        <Button>{ "Read More →" }</Button>
       </Link>
     </div>
   )

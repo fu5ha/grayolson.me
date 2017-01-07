@@ -7,10 +7,9 @@ import Page from "../Page"
 var styles = StyleSheet.create({
   header: {
     display: 'flex',
-    'justify-content': 'center',
+    'justify-content': 'flex-start',
     opacity: 0.6,
     'font-size': '0.8rem',
-    'margin-bottom': '1rem',
   }
 })
 

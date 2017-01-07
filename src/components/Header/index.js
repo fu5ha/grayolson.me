@@ -1,7 +1,7 @@
 import React, { PropTypes } from "react"
 import { Link } from "phenomic"
 import {StyleSheet, css} from "aphrodite"
-import Scrollchor from "react-scrollchor"
+// import Scrollchor from "react-scrollchor"
 
 import {colorText,Lato} from "../../style-vars"
 import {toRem, toCSS} from "../../style-helpers"
@@ -58,10 +58,12 @@ var styles = StyleSheet.create({
   },
 })
 
+/*
 function easeInOutQuad(x, t, b, c, d) {
   if ((t/=d/2) < 1) return c/2*t*t + b;
   return -c/2 * ((--t)*(t-2) - 1) + b;
 }
+*/
 
 const Header = (props, { metadata: { pkg } }) => (
   <header className={ css(styles.header) }>
@@ -72,13 +74,24 @@ const Header = (props, { metadata: { pkg } }) => (
         >
           { "about" }
         </Link>
-        <Scrollchor
+        <Link
           className={ css(styles.link) }
-          to="#test"
-          animate={{offset:-100, easing: easeInOutQuad}}
+          to={ "/asteroids/" }
+        >
+          { "asteroids" }
+        </Link>
+        <a
+          className={ css(styles.link) }
+          href={ "https://www.artstation.com/artist/termhn" }
         >
           { "art" }
-        </Scrollchor>
+        </a>
+        <a
+          className={ css(styles.link) }
+          href={ "http://flickr.com/grayolson" }
+        >
+          { "photos" }
+        </a>
         {
           pkg.twitter &&
           <a
