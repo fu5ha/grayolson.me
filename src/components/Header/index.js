@@ -85,7 +85,7 @@ const Header = (props, { metadata: { pkg } }) => (
             href={ `https://twitter.com/${pkg.twitter}` }
             className={ css(styles.link) }
           >
-            { "Twitter" }
+            { "twitter" }
           </a>
         }
         {
@@ -94,7 +94,7 @@ const Header = (props, { metadata: { pkg } }) => (
             href={ pkg.repository }
             className={ css(styles.link) }
           >
-            { "GitHub" }
+            { "github" }
           </a>
         }
     </nav>
