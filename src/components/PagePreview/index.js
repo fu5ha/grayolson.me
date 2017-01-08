@@ -1,44 +1,44 @@
 import React, { PropTypes } from "react"
 import { Link } from "phenomic"
-import {StyleSheet, css} from "aphrodite"
+import {css} from "glamor"
 
 import Button from "../../components/Button"
 
-var styles = StyleSheet.create({
-  wrapper: {
+var styles = {
+  wrapper: css({
     display: 'flex',
-    'flex-direction': 'column',
-    'max-width': '40rem',
+    flexDirection: 'column',
+    maxWidth: '40rem',
     margin: '1rem auto',
     padding: '1rem 0',
-  },
+  }),
 
-  title: {
-    'align-self': 'center',
-    'font-size': '1.2rem',
-    'font-weight': '900',
-  },
+  title: css({
+    alignSelf: 'center',
+    fontSize: '1.2rem',
+    fontWeight: '900',
+  }),
 
-  meta: {
-    'font-size': '0.75rem',
+  meta: css({
+    fontSize: '0.75rem',
     opacity: '0.6',
-  },
+  }),
 
-  description: {
-    'font-size': '0.85rem',
-  },
+  description: css({
+    fontSize: '0.85rem',
+  }),
 
-  readMore: {
+  readMore: css({
     /* align-self: center; */
     display: 'inline-flex',
-    'margin-top': '1rem',
-    'border-radius': '3px',
-    'font-size': '0.8rem',
-    'text-align': 'center',
-    'border-bottom': '0 !important',
-    'text-decoration': 'none !important',
-  },
-})
+    marginTop: '1rem',
+    borderRadius: '3px',
+    fontSize: '0.8rem',
+    textAlign: 'center',
+    borderBottom: '0 !important',
+    textDecoration: 'none !important',
+  }),
+}
 
 const PagePreview = ({ __url, title, date, description }) => {
   const pageDate = date ? new Date(date) : null

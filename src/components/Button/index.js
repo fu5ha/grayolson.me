@@ -1,18 +1,18 @@
 import React, { PropTypes } from "react"
-import {StyleSheet, css} from "aphrodite"
+import {css} from "glamor"
 import cn from "classnames"
 
 import {colorPrimary, colorPrimaryDark, colorNeutralLight, colorSecondary, colorSecondaryDark} from "../../style-vars"
 import {hexToRGBA} from '../../style-helpers'
 
-var styles = StyleSheet.create({
-  button: {
+var styles = {
+  button: css({
     display: 'inline-flex',
     padding: '0 1rem',
-    'line-height': '2rem',
-    'font-weight': '100',
-    'text-align': 'center',
-    'border-radius': '3px',
+    lineHeight: '2rem',
+    fontWeight: '100',
+    textAlign: 'center',
+    borderRadius: '3px',
 
     transition: '.2s all',
 
@@ -21,13 +21,13 @@ var styles = StyleSheet.create({
     background: hexToRGBA(colorNeutralLight, 0.2),
 
     ':hover': {
-      'text-decoration': 'none',
+      textDecoration: 'none',
       color: colorPrimaryDark,
       border: '1px solid ' + colorPrimaryDark,
     }
-  },
+  }),
 
-  secondary: {
+  secondary: css({
     color: colorSecondary,
     border: '1px solid ' + colorSecondary,
 
@@ -35,27 +35,27 @@ var styles = StyleSheet.create({
       color: colorSecondaryDark,
       border: '1px solid ' + colorSecondaryDark,
     },
-  },
+  }),
 
-  light: {
+  light: css({
     color: colorNeutralLight,
     border: '1px solid ' + colorNeutralLight,
 
     ':hover': {
-      'text-decoration': 'none',
+      textDecoration: 'none',
       color: colorNeutralLight,
       border: '1px solid ' + colorNeutralLight,
       background: hexToRGBA(colorNeutralLight, 0.3),
     }
-  },
+  }),
 
 
-  big: {
-    'font-size': '1.5rem',
+  big: css({
+    fontSize: '1.5rem',
     padding: '0 2rem',
-    'line-height': '3rem',
-  },
-})
+    lineHeight: '3rem',
+  }),
+}
 
 const Button = ({ className, secondary, light, big, ...otherProps }) => (
   <span

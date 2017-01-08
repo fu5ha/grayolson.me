@@ -1,14 +1,14 @@
 import React, {PropTypes} from "react"
 import Helmet from "react-helmet"
 import { BodyContainer, joinUri } from "phenomic"
-import {StyleSheet, css} from "aphrodite"
+import {css} from "glamor"
 import Container from "../../components/Container"
 
-const styles = StyleSheet.create({
-    iframe: {
+const styles = {
+    iframe: css({
         height: '100vh'
-    }
-})
+    }),
+}
 
 class Asteroids extends React.Component {
 

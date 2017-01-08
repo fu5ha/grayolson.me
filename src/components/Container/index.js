@@ -1,16 +1,16 @@
 import React, { PropTypes } from "react"
-import {StyleSheet, css} from "aphrodite"
+import {css} from "glamor"
 
-var styles = StyleSheet.create({
-  container: {
-    'min-height': '100vh',
+var styles = {
+  container: css({
+    minHeight: '100vh',
     display: 'flex',
-    'flex-direction': 'column',
-  },
-  row: {
-    'flex-direction': 'row',
-  },
-})
+    flexDirection: 'column',
+  }),
+  row: css({
+    flexDirection: 'row',
+  }),
+}
 
 const Container = (props) => (
   <div className={ css(styles.container, props.row && styles.row) }>

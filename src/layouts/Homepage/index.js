@@ -1,7 +1,7 @@
 import React, { PropTypes } from "react"
 import Helmet from "react-helmet"
 import { BodyContainer, joinUri } from "phenomic"
-import { StyleSheet, css } from "aphrodite"
+import { css } from "glamor"
 
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
@@ -14,10 +14,10 @@ import Hero from "../../components/Hero"
 
 import {mainStyles} from "../../style-vars"
 
-const styles = StyleSheet.create({
-    html: mainStyles.html,
-    body: mainStyles.text
-})
+const styles = {
+    html: css(mainStyles.html),
+    body: css(mainStyles.text)
+}
 
 const Homepage = (
     {

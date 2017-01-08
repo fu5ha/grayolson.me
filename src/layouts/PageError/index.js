@@ -1,31 +1,31 @@
 import React, { PropTypes } from "react"
-import {StyleSheet, css} from "aphrodite"
+import {css} from "glamor"
 
 import Page from "../Page"
 
-const styles = StyleSheet.create({
-  container: {
+const styles = {
+  container: css({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     minHeight: '50vh',
     padding: '1rem 0',
-  },
+  }),
 
-  oops: {
+  oops: css({
     fontSize: '4rem',
     lineHeight: '4rem',
     color: '#ddd',
-  },
+  }),
 
-  title: {
+  title: css({
     margin: '4rem 0',
     fontSize: '2rem',
     lineHeight: '3rem',
     textAlign: 'center',
-  },
-})
+  }),
+}
 
 
 const PageError = ({ error, errorText }) => (

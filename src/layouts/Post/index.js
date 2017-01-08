@@ -1,17 +1,17 @@
 import React, { PropTypes } from "react"
-import {StyleSheet, css} from "aphrodite"
+import {css} from "glamor"
 
 import LatestPosts from "../../components/LatestPosts"
 import Page from "../Page"
 
-var styles = StyleSheet.create({
-  header: {
+var styles = {
+  header: css({
     display: 'flex',
-    'justify-content': 'flex-start',
+    justifyContent: 'flex-start',
     opacity: 0.6,
-    'font-size': '0.8rem',
-  }
-})
+    fontSize: '0.8rem',
+  }),
+}
 
 const Post = (props) => {
   // it's up to you to choose what to do with this layout ;)

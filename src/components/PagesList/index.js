@@ -1,17 +1,17 @@
 import React, { PropTypes } from "react"
-import {StyleSheet, css} from "aphrodite"
+import {css} from "glamor"
 
 import PagePreview from "../PagePreview"
 
-var styles = StyleSheet.create({
-  list: {
+var styles = {
+  list: css({
     display: 'flex',
-    'flex-direction': 'column',
+    flexDirection: 'column',
 
-    'list-style': 'none',
+    listStyle: 'none',
     padding: 0,
-  }
-})
+  })
+}
 
 
 const PagesList = ({ pages }) => {

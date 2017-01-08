@@ -3,7 +3,7 @@ import Helmet from "react-helmet"
 import warning from "warning"
 import { BodyContainer, joinUri } from "phenomic"
 
-import {StyleSheet,css} from "aphrodite"
+import {css} from "glamor"
 import {mainStyles, maxWidth, colorPrimary, colorText} from "../../style-vars"
 import {toCSS} from "../../style-helpers"
 
@@ -13,63 +13,63 @@ import Header from "../../components/Header"
 import Content from "../../components/Content"
 import Footer from "../../components/Footer"
 
-var styles = StyleSheet.create({
-  page: {
+var styles = {
+  page: css({
     ...mainStyles.html,
     ...mainStyles.text,
     display: 'flex',
-    'flex-direction': 'column',
-  },
+    flexDirection: 'column',
+  }),
 
-  wrapper: {
+  wrapper: css({
     display: 'flex',
-    'flex-direction': 'column',
-    'align-self': 'center',
+    flexDirection: 'column',
+    alignSelf: 'center',
     width: '100%',
-    'max-width': toCSS(maxWidth),
+    maxWidth: toCSS(maxWidth),
     padding: '1rem 0.75rem'
-  },
+  }),
 
-  header: {
+  header: css({
     display: 'flex',
-    'flex-direction': 'column',
+    flexDirection: 'column',
     padding: '5vh 0',
-    'text-align': 'center',
-  },
+    textAlign: 'center',
+  }),
 
-  heading: {
+  heading: css({
     color: colorText,
-    'letter-spacing': '1px',
-  },
+    letterSpacing: '1px',
+  }),
 
-  cta: {
-    'margin-top': '2rem',
-  },
+  cta: css({
+    marginTop: '2rem',
+  }),
 
-  pageContent: {
+  pageContent: css({
     margin: '1rem 0',
-  },
+  }),
 
-  body: {
-    a: {
+  body: css({
+    a: css({
       color: colorPrimary,
       transition: 'all 0.2s',
-      'text-decoration': 'none',
-      'border-bottom': '1px solid transparent',
+      textDecoration: 'none',
+      borderBottom: '1px solid transparent',
 
       ':hover': {
         opacity: 1,
         color: 'color(' + colorPrimary + ' l(- 5%))',
         'border-bottom-color': colorPrimary,
       }
-    },
+    }),
 
     /* handy for content */
-    img: {
-      'max-width': '100%',
-    },
-  },
-})
+    img: css({
+      maxWidth: '100%',
+    }),
+  }),
+}
 
 const Page = (
   {

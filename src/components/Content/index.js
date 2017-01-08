@@ -1,14 +1,14 @@
 import React, { PropTypes } from "react"
-import {StyleSheet, css} from "aphrodite"
+import {css} from "glamor"
 
-var styles =  StyleSheet.create({
-  content: {
+var styles =  {
+  content: css({
     flex: '1 1 auto',
     display: 'flex',
-    'align-items': 'stretch',
-    'flex-direction': 'column',
-  }
-})
+    alignItems: 'stretch',
+    flexDirection: 'column',
+  }),
+}
 const Content = (props) => (
   <div className={ css(styles.content) }>
     { props.children }

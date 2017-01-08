@@ -1,5 +1,5 @@
 import React from "react"
-import {StyleSheet, css} from "aphrodite"
+import {css} from "glamor"
 
 import {Lato, colorNeutralLight, colorPrimary, colorText} from "../../style-vars"
 import {toCSS} from "../../style-helpers"
@@ -12,32 +12,32 @@ const leaderSize = {
   val: 3.0,
   type: 'rem'
 }
-const styles = StyleSheet.create({
-  titleDiv: {
+const styles = {
+  titleDiv: css({
     marginTop: '-3rem',
     flex: 1,
     textAlign: 'center',
-  },
-  title: {
+  }),
+  title: css({
     fontSize: toCSS(titleSize),
     color: colorPrimary,
-    'margin-left': '1.5rem',
-    'margin-top': '5%'
-  },
-  leader: {
+    marginLeft: '1.5rem',
+    marginTop: '5%'
+  }),
+  leader: css({
     fontWeight: 200,
     fontFamily: Lato,
     fontSize: toCSS(leaderSize),
     color: colorText
-  },
-  hero: {
+  }),
+  hero: css({
     minHeight: '100vh',
     display: 'flex',
-    'align-items': 'center',
-    'justify-content': 'center',
-    'background-color': colorNeutralLight,
-  }
-})
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: colorNeutralLight,
+  }),
+}
 
 const Hero = () => (
   <section id="hero" className={ css(styles.hero) }>

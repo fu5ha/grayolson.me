@@ -1,14 +1,14 @@
 import React, { PropTypes } from "react"
 import enhanceCollection from "phenomic/lib/enhance-collection"
-import {StyleSheet, css} from "aphrodite"
+import {css} from "glamor"
 
 import PagesList from "../../components/PagesList"
 
-var styles = StyleSheet.create({
-  latestPosts: {
-    'text-align': 'center',
-  }
-})
+var styles = {
+  latestPosts: css({
+    textAlign: 'center',
+  })
+}
 
 const defaultNumberOfPosts = 6
 

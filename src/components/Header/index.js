@@ -1,14 +1,14 @@
 import React, { PropTypes } from "react"
 import { Link } from "phenomic"
-import {StyleSheet, css} from "aphrodite"
+import {css} from "glamor"
 // import Scrollchor from "react-scrollchor"
 
 import {colorText,Lato} from "../../style-vars"
 import {toRem, toCSS} from "../../style-helpers"
 
 var pseudo = {
-      color: 'inherit',
-      opacity: 1,
+  color: 'inherit',
+  opacity: 1,
 }
 
 var navItemPadding = {
@@ -21,8 +21,8 @@ var navMaxWidth = {
   type: 'rem'
 }
 
-var styles = StyleSheet.create({
-  header: {
+var styles = {
+  header: css({
     position: 'absolute',
     /* stretch */
     left: 0,
@@ -31,32 +31,33 @@ var styles = StyleSheet.create({
     color: colorText,
     fontFamily: Lato,
     fontWeight: 600,
-  },
+  }),
 
-  nav: {
+  nav: css({
     display: 'flex',
-    'flex-direction': 'row',
-    'justify-content': 'space-between',
-    'max-width': toRem(navMaxWidth.val + (navItemPadding.val * 2)),
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    maxWidth: toRem(navMaxWidth.val + (navItemPadding.val * 2)),
     margin: '0 auto',
     padding: 0,
-    'line-height': '3rem',
-  },
+    lineHeight: '3rem',
+  }),
 
-  link: {
+  link: css({
+    fontFamily: Lato,
     display: 'flex',
-    'align-items': 'center',
+    alignItems: 'center',
     padding: '0 ' + toCSS(navItemPadding),
     color: 'inherit',
-    'text-decoration': 'none', 
+    textDecoration: 'none', 
     opacity: 0.4,
     transition: '0.4s all',
-    'border-bottom': '1px solid transparent',
+    borderBottom: '1px solid transparent',
 
     ':hover': pseudo,
     ':focus': pseudo,  
-  },
-})
+  }),
+}
 
 /*
 function easeInOutQuad(x, t, b, c, d) {
@@ -66,28 +67,28 @@ function easeInOutQuad(x, t, b, c, d) {
 */
 
 const Header = (props, { metadata: { pkg } }) => (
-  <header className={ css(styles.header) }>
-    <nav className={ css(styles.nav) }>
+  <header className={ styles.header }>
+    <nav className={ styles.nav }>
         <Link
-          className={ css(styles.link) }
+          {...styles.link}
           to={ "/" }
         >
-          { "about" }
+          about
         </Link>
         <Link
-          className={ css(styles.link) }
+          { ...styles.link }
           to={ "/asteroids/" }
         >
-          { "asteroids" }
+          asteroids
         </Link>
         <a
-          className={ css(styles.link) }
+          className={ styles.link }
           href={ "https://www.artstation.com/artist/termhn" }
         >
           { "art" }
         </a>
         <a
-          className={ css(styles.link) }
+          className={ styles.link }
           href={ "http://flickr.com/grayolson" }
         >
           { "photos" }
@@ -96,7 +97,7 @@ const Header = (props, { metadata: { pkg } }) => (
           pkg.twitter &&
           <a
             href={ `https://twitter.com/${pkg.twitter}` }
-            className={ css(styles.link) }
+            className={ styles.link }
           >
             { "twitter" }
           </a>
@@ -105,7 +106,7 @@ const Header = (props, { metadata: { pkg } }) => (
           pkg.repository &&
           <a
             href={ pkg.repository }
-            className={ css(styles.link) }
+            className={ styles.link }
           >
             { "github" }
           </a>

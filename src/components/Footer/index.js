@@ -1,46 +1,46 @@
 import React from "react"
-import {StyleSheet, css} from "aphrodite"
+import {css} from "glamor"
 
 import {Lato} from "../../style-vars"
 
-var styles = StyleSheet.create( {
-  footer: {
+var styles = {
+  footer: css({
     flex: 1,
     maxWidth: '40rem',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-around',
     fontFamily: Lato,
-    'text-align': 'center',
-  },
+    textAlign: 'center',
+  }),
   
-  footerContainer: {
+  footerContainer: css({
     display: 'flex',
     aligntItems: 'center',
     justifyContent: 'center'
-  },
+  }),
   
-  phenomicReference: {
+  phenomicReference: css({
     flex: 1,
-    'font-size': '0.75rem',
+    fontSize: '0.75rem',
     opacity: 0.6,
     color: 'inherit',
-    'text-decoration': 'none',
-  },
+    textDecoration: 'none',
+  }),
 
-  phenomicReferenceName: {
-    'font-weight': 'bold',
-  },
+  phenomicReferenceName: css({
+    fontWeight: 'bold',
+  }),
   
-  copy: {
+  copy: css({
     flex: 1,
     fontSize: '0.75rem',
     opacity: 0.8,
     color: 'inherit',
-    'text-decoration': 'none'
-  }
+    textDecoration: 'none'
+  }),
   
-})
+}
 
 
 const Footer = () => (
