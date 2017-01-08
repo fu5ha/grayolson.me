@@ -20,9 +20,11 @@ const styles = {
     marginTop: '5%',
     '@media(max-width: 767px)': {
       fontSize: toRem(titleSize*2/3),
+      marginLeft: '1rem'
     },
     '@media(max-width: 374px)': {
       fontSize: toRem(titleSize*1/2),
+      marginLeft: '0.5rem'
     },
   }),
   leader: css({
