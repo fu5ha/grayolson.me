@@ -5,7 +5,7 @@ import {Lato, colorNeutralLight, colorPrimary, colorText} from "../../style-vars
 import {toRem} from "../../style-helpers"
 
 const titleSize = 12.0
-const leaderSize = 3.0
+const leaderSize = 4.0
 const styles = {
   titleDiv: css({
     marginTop: '-3rem',
@@ -17,7 +17,7 @@ const styles = {
     fontSize: toRem(titleSize),
     color: colorPrimary,
     marginLeft: '1.5rem',
-    marginTop: '5%',
+    marginTop: '0',
     '@media(max-width: 767px)': {
       fontSize: toRem(titleSize*2/3),
       marginLeft: '1rem'
@@ -32,6 +32,7 @@ const styles = {
     fontFamily: Lato,
     fontSize: toRem(leaderSize),
     color: colorText,
+    marginBottom: '-1rem',
     '@media(max-width: 767px)': {
       fontSize: toRem(leaderSize*2/3),
     },
