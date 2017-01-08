@@ -44,11 +44,11 @@ const PagePreview = ({ __url, title, date, description }) => {
   const pageDate = date ? new Date(date) : null
 
   return (
-    <div className={ css(styles.wrapper) }>
+    <div {...styles.wrapper}>
       <Link to={ __url } {...styles.title }>
         { title }
       </Link>
-      <div className={ css(styles.meta) }>
+      <div {...styles.meta}>
         {
           pageDate &&
             <time key={ pageDate.toISOString() }>
@@ -56,7 +56,7 @@ const PagePreview = ({ __url, title, date, description }) => {
             </time>
         }
       </div>
-      <div className={ css(styles.description) }>
+      <div {...styles.description}>
         { description }
         { " " }
       </div>

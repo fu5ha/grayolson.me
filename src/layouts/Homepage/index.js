@@ -36,7 +36,7 @@ const Homepage = (
     ]
   
     return(
-        <div className={css(styles.html, styles.body)}>
+        <div {...styles.html} {...styles.body}>
             <Helmet title={ metaTitle }
                     meta={ meta } />
             <Header />

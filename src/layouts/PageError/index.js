@@ -35,10 +35,10 @@ const PageError = ({ error, errorText }) => (
       hero: "https://farm8.staticflickr.com/7559/16101654539_bee5151340_k.jpg",
     }}
   >
-    <div className={ css(styles.container) }>
-      <div className={ css(styles.oops) }>{ "😱 Oooops!" }</div>
-      <div className={ css(styles.text) }>
-        <p className={ css(styles.title) }>
+    <div {...styles.container}>
+      <div {...styles.oops}>{ "😱 Oooops!" }</div>
+      <div {...styles.text}>
+        <p {...styles.title}>
           <strong>{ error }</strong>
           { " " }
           { errorText }

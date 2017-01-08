@@ -112,20 +112,20 @@ const Page = (
 
   return (
     <Content>
-    <div className={ css(styles.page) }>
+    <div {...styles.page}>
       <Helmet
         title={ metaTitle }
         meta={ meta }
       />
       <Header />
-      <div className={ css(styles.wrapper, styles.pageContent) }>
-        <div className={css(styles.header)} >
-          <h1 className={ css(styles.heading)}>
+      <div {...styles.wrapper} {...styles.pageContent}>
+        <div {...styles.header} >
+          <h1 {...styles.heading}>
             {head.title} 
           </h1>
         </div>
         { header }
-        <div className={ css(styles.body) }>
+        <div {...styles.body}>
           {
             isLoading
             ? <Loading />

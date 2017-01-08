@@ -53,10 +53,10 @@ const styles = {
 }
 
 const Hero = () => (
-  <section id="hero" className={ css(styles.hero) }>
-    <div className={ css(styles.titleDiv) }>
-      <h4 className={ css(styles.leader) }>hello, my name is</h4>
-      <h1 className={ css(styles.title) }>gray.</h1>
+  <section id="hero" {...styles.hero}>
+    <div {...styles.titleDiv}>
+      <h4 {...styles.leader}>hello, my name is</h4>
+      <h1 {...styles.title}>gray.</h1>
     </div>
   </section>
 )

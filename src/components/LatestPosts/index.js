@@ -22,7 +22,7 @@ const LatestPosts = (props, { collection }) => {
 
   return (
     <div>
-      <h2 className={ css(styles.latestPosts) }>
+      <h2 {...styles.latestPosts}>
         { "Latest Posts" }
       </h2>
       <PagesList pages={ latestPosts } />

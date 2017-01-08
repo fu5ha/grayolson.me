@@ -22,7 +22,7 @@ const Post = (props) => {
       { ...props }
       header={
         <div>
-          <header className={ css(styles.header) }>
+          <header {...styles.header}>
             {
               pageDate &&
               <time key={ pageDate.toISOString() }>

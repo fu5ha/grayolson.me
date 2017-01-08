@@ -44,17 +44,17 @@ var styles = {
 
 
 const Footer = () => (
-  <footer className={ css(styles.footerContainer) }>
-    <div className={ css(styles.footer) }>
-      <p className={css(styles.copy)}>
+  <footer {...styles.footerContainer}>
+    <div {...styles.footer}>
+      <p {...styles.copy}>
         <span>&copy;</span> Gray Olson 2017
       </p>
-      <p className={ css(styles.phenomicReference) }>
+      <p {...styles.phenomicReference}>
         <a
           href={ process.env.PHENOMIC_HOMEPAGE }
         >
           { "Created with " }
-          <span className={ css(styles.phenomicReferenceName) }>
+          <span {...styles.phenomicReferenceName}>
             {  `<${ process.env.PHENOMIC_NAME} />.` }
           </span>
         </a>

@@ -20,7 +20,7 @@ const PagesList = ({ pages }) => {
       {
       pages.length
       ? (
-        <ul className={ css(styles.list) }>
+        <ul {...styles.list}>
           {
           pages.map((page) => (
             <li key={ page.title }><PagePreview { ...page } /></li>

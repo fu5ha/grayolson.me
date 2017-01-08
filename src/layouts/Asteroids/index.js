@@ -45,7 +45,7 @@ class Asteroids extends React.Component {
                         meta={ meta } />
                 <BodyContainer>
                     <Container>
-                    <iframe id="asteroids-frame" src="/assets/asteroids/" className={css(styles.iframe)} autoFocus></iframe>
+                    <iframe id="asteroids-frame" src="/assets/asteroids/" {...styles.iframe} autoFocus></iframe>
                     </Container>
                     {body}
                 </BodyContainer>

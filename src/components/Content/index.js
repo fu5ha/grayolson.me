@@ -10,7 +10,7 @@ var styles =  {
   }),
 }
 const Content = (props) => (
-  <div className={ css(styles.content) }>
+  <div {...styles.content}>
     { props.children }
   </div>
 )
