@@ -2,16 +2,10 @@ import React from "react"
 import {css} from "glamor"
 
 import {Lato, colorNeutralLight, colorPrimary, colorText} from "../../style-vars"
-import {toCSS} from "../../style-helpers"
+import {toRem} from "../../style-helpers"
 
-const titleSize = {
-  val: 12.0,
-  type: 'rem'
-}
-const leaderSize = {
-  val: 3.0,
-  type: 'rem'
-}
+const titleSize = 12.0
+const leaderSize = 3.0
 const styles = {
   titleDiv: css({
     marginTop: '-3rem',
@@ -19,16 +13,29 @@ const styles = {
     textAlign: 'center',
   }),
   title: css({
-    fontSize: toCSS(titleSize),
+    fontFamily: 'Helvetica, sans-serif',
+    fontSize: toRem(titleSize),
     color: colorPrimary,
     marginLeft: '1.5rem',
-    marginTop: '5%'
+    marginTop: '5%',
+    '@media(max-width: 767px)': {
+      fontSize: toRem(titleSize*2/3),
+    },
+    '@media(max-width: 374px)': {
+      fontSize: toRem(titleSize*1/2),
+    },
   }),
   leader: css({
     fontWeight: 200,
     fontFamily: Lato,
-    fontSize: toCSS(leaderSize),
-    color: colorText
+    fontSize: toRem(leaderSize),
+    color: colorText,
+    '@media(max-width: 767px)': {
+      fontSize: toRem(leaderSize*2/3),
+    },
+    '@media(max-width: 374px)': {
+      fontSize: toRem(leaderSize*1/2),
+    },
   }),
   hero: css({
     minHeight: '100vh',

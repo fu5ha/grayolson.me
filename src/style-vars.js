@@ -9,17 +9,18 @@ export var h1Size = {
     val: 8.0,
     type: 'rem'
 }
-export const FjallaOne = css.fontFace({
-    fontFamily: 'FjallaOne',
+export const Cormorant = css.fontFace({
+    fontFamily: 'Cormorant',
     fontStyle: "normal",
-    fontWeight: "400",
-    src: "local('Fjalla One'), local(FjallaOneRegular), url(https://fonts.gstatic.com/s/fjallaone/v4/SHXJdWnWW6HDq-6DpcG8PwsYbbCjybiHxArTLjt7FRU.woff2) format('woff2')"
+    fontWeight: "normal",
+    src: "local('Cormorant Garamond'), local(CormorantGaramondRegular), url('/assets/fonts/Cormorant_Garamond/CormorantGaramond-Regular.ttf') format('truetype')"
 })
 export const Lato = css.fontFace({
     fontFamily: 'Lato',
     fontStyle: "normal",
-    fontWeight: "400",
-    src: "local('Lato Regular'), local(LatoRegular), url(https://fonts.gstatic.com/s/lato/v11/8qcEw_nrk_5HEcCpYdJu8BTbgVql8nDJpwnrE27mub0.woff2) format('woff2')"
+    fontWeight: "normal",
+    src: "local('Lato Regular'), local(LatoRegular), url('/assets/fonts/Lato/Lato-Regular.ttf') format('truetype')"
+
 })
 export var colorPrimaryDark =  "#84132B"
 export var colorPrimary = "#E66C7E"

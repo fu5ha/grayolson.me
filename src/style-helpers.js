@@ -62,7 +62,7 @@ export function lum(hex, l) {
         var g = parseInt(hex.substring(2,4),16)
         var b = parseInt(hex.substring(4,6),16)
         var hsl = rgbToHsl(r,g,b);
-        var rgb = hslToRgb(hsl[0], hsl[1], l)
+        var rgb = hslToRgb(hsl[0], hsl[1], hsl[2]+l)
         r = rgb[0].toString(16);
         r = rgb[1].toString(16);
         g = rgb[2].toString(16);

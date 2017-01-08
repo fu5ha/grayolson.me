@@ -4,8 +4,8 @@ import warning from "warning"
 import { BodyContainer, joinUri } from "phenomic"
 
 import {css} from "glamor"
-import {mainStyles, maxWidth, colorPrimary, colorText} from "../../style-vars"
-import {toCSS} from "../../style-helpers"
+import {mainStyles, maxWidth, colorPrimary, colorText, Lato} from "../../style-vars"
+import {toCSS, lum} from "../../style-helpers"
 
 // import Button from "../../components/Button"
 import Loading from "../../components/Loading"
@@ -38,8 +38,10 @@ var styles = {
   }),
 
   heading: css({
+    fontFamily: Lato,
     color: colorText,
     letterSpacing: '1px',
+    lineHeight: '2rem',
   }),
 
   cta: css({
@@ -59,8 +61,8 @@ var styles = {
 
       ':hover': {
         opacity: 1,
-        color: 'color(' + colorPrimary + ' l(- 5%))',
-        'border-bottom-color': colorPrimary,
+        color: lum(colorPrimary, -0.05),
+        borderBottomColor: colorPrimary,
       }
     }),
 

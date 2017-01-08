@@ -16,7 +16,7 @@ var styles = {
   title: css({
     alignSelf: 'center',
     fontSize: '1.2rem',
-    fontWeight: '900',
+    textAlign: 'center',
   }),
 
   meta: css({
@@ -45,7 +45,7 @@ const PagePreview = ({ __url, title, date, description }) => {
 
   return (
     <div className={ css(styles.wrapper) }>
-      <Link to={ __url } className={ css(styles.title) }>
+      <Link to={ __url } {...styles.title }>
         { title }
       </Link>
       <div className={ css(styles.meta) }>
@@ -60,7 +60,7 @@ const PagePreview = ({ __url, title, date, description }) => {
         { description }
         { " " }
       </div>
-      <Link to={ __url } className={ css(styles.readMore) }>
+      <Link to={ __url } {...styles.readMore}>
         <Button>{ "Read More →" }</Button>
       </Link>
     </div>

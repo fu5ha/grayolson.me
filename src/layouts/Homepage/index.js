@@ -1,6 +1,6 @@
 import React, { PropTypes } from "react"
 import Helmet from "react-helmet"
-import { BodyContainer, joinUri } from "phenomic"
+import { joinUri } from "phenomic"
 import { css } from "glamor"
 
 import Header from "../../components/Header"
@@ -22,7 +22,6 @@ const styles = {
 const Homepage = (
     {
         __url,
-        children,
         head
     },
 ) => {
@@ -37,14 +36,11 @@ const Homepage = (
     ]
   
     return(
-        <div className={css(styles.html)}>
+        <div className={css(styles.html, styles.body)}>
             <Helmet title={ metaTitle }
                     meta={ meta } />
             <Header />
-            <BodyContainer className={css(styles.body)} >
-                <Hero />
-                {children}
-            </BodyContainer>
+            <Hero />
             <Footer />
         </div>
     )
