@@ -15,15 +15,18 @@ const styles = {
   title: css({
     fontFamily: 'Helvetica, sans-serif',
     fontSize: toRem(titleSize),
+    lineHeight: toRem(titleSize),
     color: colorPrimary,
     marginLeft: '1.5rem',
     marginTop: '0',
     '@media(max-width: 767px)': {
       fontSize: toRem(titleSize*2/3),
+      lineHeight: toRem(titleSize*2/3),
       marginLeft: '1rem'
     },
     '@media(max-width: 374px)': {
       fontSize: toRem(titleSize*1/2),
+      lineHeight: toRem(titleSize*1/2),
       marginLeft: '0.5rem'
     },
   }),
