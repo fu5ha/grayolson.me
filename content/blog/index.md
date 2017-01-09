@@ -1,5 +1,5 @@
 ---
-title: My Thoughts
+title: my thoughts
 layout: BlogHome
 ---
 

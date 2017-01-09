@@ -43,6 +43,7 @@ var styles = {
     color: colorPrimary,
     letterSpacing: '1px',
     lineHeight: '2rem',
+    textTransform: 'lowercase',
   }),
 
   cta: css({

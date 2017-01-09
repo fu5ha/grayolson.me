@@ -31,7 +31,7 @@ const LatestPosts = (props, { collection }) => {
   return (
     <div>
       <h2 {...styles.latestPosts}>
-        { "Other Posts" }
+        { "Other Posts".toLowerCase() }
       </h2>
       <PagesList pages={ latestPosts } />
       {

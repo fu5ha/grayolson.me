@@ -49,13 +49,13 @@ const Footer = () => (
   <footer {...styles.footerContainer}>
     <div {...styles.footer}>
       <p {...styles.copy}>
-        <span>&copy;</span> Gray Olson 2017
+        <span>&copy;</span> { "Gray Olson 2017".toLowerCase() }
       </p>
       <p {...styles.phenomicReference}>
         <a
           href={ process.env.PHENOMIC_HOMEPAGE }
         >
-          { "Created with " }
+          { "created with " }
           <span {...styles.phenomicReferenceName}>
             {  `<${ process.env.PHENOMIC_NAME} />.` }
           </span>

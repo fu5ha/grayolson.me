@@ -25,7 +25,7 @@ const FeaturedPosts = (props, { collection }) => {
   return (
     <div>
       <h2 {...styles.latestPosts}>
-        { "Featured Posts" }
+        { "Featured Posts".toLowerCase() }
       </h2>
       <PagesList pages={ featuredPosts } />
     </div>

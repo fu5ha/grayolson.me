@@ -30,6 +30,7 @@ var styles = {
   meta: css({
     fontSize: '0.75rem',
     opacity: '0.6',
+    textTransform: 'lowercase',
   }),
 
   description: css({
@@ -60,12 +61,12 @@ const PagePreview = ({ __url, title, date, description, small }) => {
   return (
     <div className={`${styles.wrapper} ${small && styles.smallWrapper}`}>
       <Link to={ __url } className={`${styles.title} ${small && styles.small}`}>
-        { title }
+        { title.toLowerCase() }
       </Link>
       { small &&
           pageDate &&
           <time {...styles.meta} key={pageDate.toISOString() }>
-            {pageDate.toDateString()}
+            {pageDate.toDateString().toLowerCase()}
           </time>
       }
       { !small &&
@@ -83,7 +84,7 @@ const PagePreview = ({ __url, title, date, description, small }) => {
             { " " }
           </div>
           <Link to={ __url } {...styles.readMore}>
-            <Button>{ "Read More →" }</Button>
+            <Button>{ "Read More →".toLowerCase() }</Button>
           </Link>
         </div>
       }
