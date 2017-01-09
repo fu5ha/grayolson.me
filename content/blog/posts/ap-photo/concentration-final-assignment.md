@@ -1,6 +1,7 @@
 ---
 layout: Post
 title: "Concentration Final Assignment"
+date: 2016-04-14
 featured: true
 ---
 

@@ -33,8 +33,7 @@ const Post = (props) => {
         </div>
       }
     >
-      <hr />
-      <LatestPosts />
+      <LatestPosts pageTitle={props.head.title}/>
     </Page>
   )
 }

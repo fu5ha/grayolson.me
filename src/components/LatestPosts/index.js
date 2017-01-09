@@ -14,11 +14,15 @@ var styles = {
   })
 }
 
-const defaultNumberOfPosts = 4
+const defaultNumberOfPosts = 2
 
 const LatestPosts = (props, { collection }) => {
   const latestPosts = enhanceCollection(collection, {
-    filter: { layout: "Post" },
+    filter: ({ layout, title }) => {
+      let isPost = layout == "Post"
+      let notCurrentPost = title != props.pageTitle
+      return isPost && notCurrentPost
+    },
     sort: "date",
     reverse: true,
   })
@@ -36,6 +40,7 @@ const LatestPosts = (props, { collection }) => {
 
 LatestPosts.propTypes = {
   numberOfPosts: PropTypes.number,
+  pageTitle: PropTypes.string
 }
 
 LatestPosts.contextTypes = {

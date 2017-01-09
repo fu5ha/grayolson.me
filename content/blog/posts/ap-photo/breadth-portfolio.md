@@ -1,6 +1,7 @@
 ---
 layout: Post
 title: "AP Photo Breadth Portfolio"
+date: 2015-12-18
 featured: true
 ---
 

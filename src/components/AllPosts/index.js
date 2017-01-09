@@ -18,15 +18,11 @@ const defaultNumberOfPosts = 2
 
 const LatestPosts = (props, { collection }) => {
   const allPosts = enhanceCollection(collection, {
-    filter: { layout: "Post" },
+    filter: ({layout, featured}) => layout == "Post" && !featured,
     sort: "date",
     reverse: true,
   })
-  const latestPosts = enhanceCollection(allPosts, {
-    filter: ({featured}) => featured !== true,
-    sort: "date",
-    reverse: true,
-  }).slice(0, props.numberOfPosts || defaultNumberOfPosts)
+  const latestPosts = allPosts.slice(0, props.numberOfPosts || defaultNumberOfPosts)
   var otherPosts = false;
   if (latestPosts.length < allPosts.length) {
     otherPosts = allPosts.slice(defaultNumberOfPosts, allPosts.length)
@@ -35,7 +31,7 @@ const LatestPosts = (props, { collection }) => {
   return (
     <div>
       <h2 {...styles.latestPosts}>
-        { "Latest Posts" }
+        { "Other Posts" }
       </h2>
       <PagesList pages={ latestPosts } />
       {
