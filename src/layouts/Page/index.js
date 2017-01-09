@@ -132,8 +132,9 @@ const Page = (
           {
             isLoading
             ? <Loading />
-            : <BodyContainer>{ body } {children}</BodyContainer>
+            : <BodyContainer>{ body }</BodyContainer>
           }
+          { children }
         </div>
         { footer }
       </div>

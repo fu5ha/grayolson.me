@@ -17,7 +17,7 @@ var styles = {
 
 const FeaturedPosts = (props, { collection }) => {
   const featuredPosts = enhanceCollection(collection, {
-    filter: ({featured}) => featured,
+    filter: ({featured}) => featured == true,
     sort: "date",
     reverse: true,
   })
