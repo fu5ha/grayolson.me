@@ -14,7 +14,7 @@ var styles = {
 }
 
 
-const PagesList = ({ pages }) => {
+const PagesList = ({ pages, small }) => {
   return (
     <div>
       {
@@ -23,7 +23,7 @@ const PagesList = ({ pages }) => {
         <ul {...styles.list}>
           {
           pages.map((page) => (
-            <li key={ page.title }><PagePreview { ...page } /></li>
+            <li key={ page.title }><PagePreview small={small} { ...page } /></li>
           ))
         }
         </ul>
@@ -36,6 +36,7 @@ const PagesList = ({ pages }) => {
 
 PagesList.propTypes = {
   pages: PropTypes.array.isRequired,
+  small: PropTypes.bool,
 }
 
 export default PagesList

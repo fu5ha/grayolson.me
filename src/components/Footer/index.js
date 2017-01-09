@@ -26,6 +26,7 @@ var styles = {
     opacity: 0.6,
     color: 'inherit',
     textDecoration: 'none',
+    fontWeight: 'normal',
   }),
 
   phenomicReferenceName: css({
@@ -37,7 +38,8 @@ var styles = {
     fontSize: '0.75rem',
     opacity: 0.8,
     color: 'inherit',
-    textDecoration: 'none'
+    textDecoration: 'none',
+    fontWeight: 'normal',
   }),
   
 }

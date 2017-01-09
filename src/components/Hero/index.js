@@ -1,7 +1,7 @@
 import React from "react"
 import {css} from "glamor"
 
-import {Lato, colorNeutralLight, colorPrimary, colorText} from "../../style-vars"
+import {colorNeutralLight, colorPrimary, colorText, Fjalla} from "../../style-vars"
 import {toRem} from "../../style-helpers"
 
 const titleSize = 12.0
@@ -32,7 +32,7 @@ const styles = {
   }),
   leader: css({
     fontWeight: 200,
-    fontFamily: Lato,
+    fontFamily: Fjalla,
     fontSize: toRem(leaderSize),
     color: colorText,
     marginBottom: '-1rem',

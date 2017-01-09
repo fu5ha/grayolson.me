@@ -4,8 +4,8 @@ import warning from "warning"
 import { BodyContainer, joinUri } from "phenomic"
 
 import {css} from "glamor"
-import {mainStyles, maxWidth, colorPrimary, colorText, Lato} from "../../style-vars"
-import {toCSS, lum} from "../../style-helpers"
+import {mainStyles, maxWidth, colorPrimary, Fjalla, colorSecondary, Lora} from "../../style-vars"
+import {toCSS} from "../../style-helpers"
 
 // import Button from "../../components/Button"
 import Loading from "../../components/Loading"
@@ -33,13 +33,14 @@ var styles = {
   header: css({
     display: 'flex',
     flexDirection: 'column',
-    padding: '5vh 0',
+    marginTop: '4vh',
+    padding: '4vh 0',
     textAlign: 'center',
   }),
 
   heading: css({
-    fontFamily: Lato,
-    color: colorText,
+    fontFamily: Fjalla,
+    color: colorPrimary,
     letterSpacing: '1px',
     lineHeight: '2rem',
   }),
@@ -53,7 +54,9 @@ var styles = {
   }),
 
   body: css({
-    a: css({
+    fontFamily: Lora,
+    fontWeight: "normal",
+    '& a': css({
       color: colorPrimary,
       transition: 'all 0.2s',
       textDecoration: 'none',
@@ -61,13 +64,13 @@ var styles = {
 
       ':hover': {
         opacity: 1,
-        color: lum(colorPrimary, -0.05),
-        borderBottomColor: colorPrimary,
+        color: colorSecondary,
+        borderBottomColor: colorSecondary,
       }
     }),
 
     /* handy for content */
-    img: css({
+    '& img': css({
       maxWidth: '100%',
     }),
   }),

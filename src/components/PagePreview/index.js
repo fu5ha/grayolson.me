@@ -4,6 +4,8 @@ import {css} from "glamor"
 
 import Button from "../../components/Button"
 
+import {Lato} from "../../style-vars"
+
 var styles = {
   wrapper: css({
     display: 'flex',
@@ -12,8 +14,14 @@ var styles = {
     margin: '1rem auto',
     padding: '1rem 0',
   }),
+  
+  smallWrapper: css({
+    margin: '0.25rem auto',
+    padding: '0',
+  }),
 
   title: css({
+    fontFamily: Lato,
     alignSelf: 'center',
     fontSize: '1.2rem',
     textAlign: 'center',
@@ -38,31 +46,47 @@ var styles = {
     borderBottom: '0 !important',
     textDecoration: 'none !important',
   }),
+
+  small: css({
+    display: 'inline-block',
+    textAlign: 'left',
+    alignSelf: 'flex-start',
+  }),
 }
 
-const PagePreview = ({ __url, title, date, description }) => {
+const PagePreview = ({ __url, title, date, description, small }) => {
   const pageDate = date ? new Date(date) : null
 
   return (
-    <div {...styles.wrapper}>
-      <Link to={ __url } {...styles.title }>
+    <div className={`${styles.wrapper} ${small && styles.smallWrapper}`}>
+      <Link to={ __url } className={`${styles.title} ${small && styles.small}`}>
         { title }
       </Link>
-      <div {...styles.meta}>
-        {
+      { small &&
           pageDate &&
-            <time key={ pageDate.toISOString() }>
-              { pageDate.toDateString() }
-            </time>
-        }
-      </div>
-      <div {...styles.description}>
-        { description }
-        { " " }
-      </div>
-      <Link to={ __url } {...styles.readMore}>
-        <Button>{ "Read More →" }</Button>
-      </Link>
+          <time {...styles.meta} key={pageDate.toISOString() }>
+            {pageDate.toDateString()}
+          </time>
+      }
+      { !small &&
+        <div>
+          <div {...styles.meta}>
+          {
+            pageDate &&
+              <time key={ pageDate.toISOString() }>
+                { pageDate.toDateString() }
+              </time>
+          }
+          </div>
+          <div {...styles.description}>
+            { description }
+            { " " }
+          </div>
+          <Link to={ __url } {...styles.readMore}>
+            <Button>{ "Read More →" }</Button>
+          </Link>
+        </div>
+      }
     </div>
   )
 }
@@ -72,6 +96,7 @@ PagePreview.propTypes = {
   title: PropTypes.string.isRequired,
   date: PropTypes.string,
   description: PropTypes.string,
+  small: PropTypes.bool,
 }
 
 export default PagePreview

@@ -29,7 +29,6 @@ var styles = {
     right: 0,
 
     color: colorText,
-    fontFamily: Lato,
     fontWeight: 600,
   }),
 
@@ -93,6 +92,12 @@ const Header = (props, { metadata: { pkg } }) => (
         >
           { "photos" }
         </a>
+        <Link
+          {...styles.link}
+          to={"/blog/"}
+        >
+          blog
+        </Link>
         {
           pkg.twitter &&
           <a

@@ -4,13 +4,17 @@ import {css} from "glamor"
 
 import PagesList from "../../components/PagesList"
 
+import {Fjalla} from "../../style-vars"
+
 var styles = {
   latestPosts: css({
+    marginTop: "4rem",
+    fontFamily: Fjalla,
     textAlign: 'center',
   })
 }
 
-const defaultNumberOfPosts = 6
+const defaultNumberOfPosts = 4
 
 const LatestPosts = (props, { collection }) => {
   const latestPosts = enhanceCollection(collection, {
