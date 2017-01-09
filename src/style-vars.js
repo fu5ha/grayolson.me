@@ -1,4 +1,4 @@
-import {css} from 'glamor'
+// import {css} from 'glamor'
 
 export var maxWidth = {
     val: 60,
@@ -9,52 +9,52 @@ export var h1Size = {
     type: 'rem'
 }
 
-export const Cormorant = css.fontFace({
+/*export const Cormorant = css.fontFace({
     fontFamily: 'Cormorant',
     fontStyle: "normal",
     fontWeight: "normal",
     src: "local('Cormorant Garamond Medium'), local(CormorantGaramondMedium), url('/assets/fonts/Cormorant_Garamond/CormorantGaramond-Medium.ttf') format('truetype')"
-})
-export const CormorantLight = css.fontFace({
+})*/
+/*export const CormorantLight = css.fontFace({
     fontFamily: 'Cormorant',
     fontStyle: "light",
     fontWeight: "light",
     src: "local('Cormorant Garamond Light'), local(CormorantGaramondLight), url('/assets/fonts/Cormorant_Garamond/CormorantGaramond-Light.ttf') format('truetype')"
-})
+})*/
 
-export const Lato = css.fontFace({
+export const Lato = "'Lato', sans-serif"/*css.fontFace({
     fontFamily: 'Lato',
     fontStyle: "normal",
     fontWeight: "normal",
     src: "local('Lato Regular'), local(LatoRegular), url('/assets/fonts/Lato/Lato-Regular.ttf') format('truetype')"
 
-})
-export const LatoLight = css.fontFace({
+})*/
+/*export const LatoLight = css.fontFace({
     fontFamily: 'Lato',
     fontStyle: "light",
     fontWeight: "light",
     src: "local('Lato Light'), local(LatoLight), url('/assets/fonts/Lato/Lato-Light.ttf') format('truetype')"
-})
+})*/
 
-export const Fjalla = css.fontFace({
+export const Fjalla = "'Fjalla One', sans-serif"/*css.fontFace({
     fontFamily: 'Fjalla',
     fontStyle: 'normal',
     fontWeight: 'normal',
     src: "local('Fjalla One'), local(FjallaOneRegular), url('/assets/fonts/Fjalla/FjallaOne-Regular.ttf') format('truetype')"
-})
+})*/
 
-export const Lora = css.fontFace({
+export const Lora = "'Lora', serif"/*css.fontFace({
     fontFamily: 'Lora',
     fontStyle: 'normal',
     fontWeight: 'normal',
     src: "local('Lora'), local(LoraRegular), url('/assets/fonts/Lora/Lora-Regular.ttf') format('truetype')"
-})
-export const LoraBold = css.fontFace({
+})*/
+/*export const LoraBold = css.fontFace({
     fontFamily: 'Lora',
     fontStyle: 'normal',
     fontWeight: 'bold',
     src: "local('Lora'), local(LoraBold), url('/assets/fonts/Lora/Lora-Bold.ttf') format('truetype')"
-})
+})*/
 
 export var colorPrimaryDark =  "#84132B"
 export var colorPrimary = "#F3315A" //BG 2
