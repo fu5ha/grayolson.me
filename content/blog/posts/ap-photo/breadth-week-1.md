@@ -2,7 +2,6 @@
 layout: Post
 title: "AP Photo Week 1: Shapes and Space"
 date: 2015-08-13
-featured: true 
 ---
 
  
