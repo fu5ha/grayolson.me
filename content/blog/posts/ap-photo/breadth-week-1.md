@@ -85,4 +85,3 @@ semester:
 [glasses]: /assets/img/week1/glasses.jpg
 [library]: /assets/img/week1/library.jpg
 [drop]: /assets/img/week1/drop.jpg
-

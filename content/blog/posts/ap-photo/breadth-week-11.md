@@ -1,7 +1,7 @@
 ---
 layout: Post
 title: "AP Photo Week 11: Long Exposure/Motion"
- 
+date: 2015-11-09
 ---
 
  
@@ -18,4 +18,3 @@ the works.
 ![Example 1][1]
 
 [1]: /assets/img/week11/1.jpg
-[2]: /assets/img/week11/2.jpg

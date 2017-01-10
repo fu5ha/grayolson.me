@@ -1,7 +1,7 @@
 ---
 layout: Post
 title: "Concentration Week 8"
- 
+date: 2016-02-26
 ---
 
  
@@ -21,4 +21,3 @@ Turn in one final photo.
 
 ![][pyramidhead]
 
-[pyramidhead]: /assets/img/s2w1/pyramidhead.jpg

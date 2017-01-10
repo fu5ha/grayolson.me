@@ -1,7 +1,7 @@
 ---
 layout: Post
 title: "Concentration Jumpstart"
- 
+date: 2016-01-05
 ---
 
  
@@ -79,4 +79,3 @@ title: "Concentration Jumpstart"
 [scarletwitch2]: /assets/img/s2w1/scarletwitch2.jpg
 [pyramidhead]: /assets/img/s2w1/pyramidhead.jpg
 [zoey]: /assets/img/s2w1/zoey.jpg
-[powergirl]: /assets/img/s2w1/powergirl.jpg

@@ -1,7 +1,7 @@
 ---
 layout: Post
 title: "AP Photo Week 5: Color"
- 
+date: 2015-09-11
 ---
 
  
@@ -18,4 +18,3 @@ respectively.
 
 [color1]: /assets/img/week5/color1.jpg
 [color2]: /assets/img/week5/color2.jpg
-[color3]: /assets/img/week5/color3.jpg

@@ -1,7 +1,7 @@
 ---
 layout: Post
 title: "Concentration Week 1"
- 
+date: 2016-01-08
 ---
 
  
@@ -17,4 +17,3 @@ class by day 1 and plan to have 1 final photo by day 4 next week.
 
 ![][drifter]
 
-[drifter]: /assets/img/s2w1/drifter.jpg

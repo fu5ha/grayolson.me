@@ -1,7 +1,7 @@
 ---
 layout: Post
 title: "Concentration Week 2"
- 
+date: 2016-01-15
 ---
 
  
@@ -19,5 +19,4 @@ photo, either the scissor one or the backup concept below it.
 
 [owl]: /assets/img/concentration/12.jpg
 [scissors]: /assets/img/concentration/13.jpg
-
 

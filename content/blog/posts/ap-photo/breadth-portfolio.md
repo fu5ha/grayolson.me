@@ -127,4 +127,3 @@ includes contrast and rhythm.
 ![Formation or
 Disintegration](https://farm6.staticflickr.com/5713/21319009529_403afc0076_k_d.jpg)
 
-

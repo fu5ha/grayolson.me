@@ -1,7 +1,7 @@
 ---
 layout: Post
 title: "Concentration Week 13"
- 
+date: 2016-04-08
 ---
 
  
@@ -23,4 +23,3 @@ following Friday.
 
 [fetch]: /assets/img/fetch1.jpg
 [fetch2]: /assets/img/fetch2.jpg
-[fetch3]: /assets/img/fetch3.png

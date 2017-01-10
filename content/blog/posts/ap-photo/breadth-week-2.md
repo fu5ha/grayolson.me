@@ -1,7 +1,7 @@
 ---
 layout: Post
 title: "AP Photo Week 2: Natural Light Still Life"
- 
+date: 2015-08-20
 ---
 
  
@@ -24,4 +24,3 @@ ready to edit by day one.
 [vase]: {{ "/public/img/week2/vase.jpg" | prepend: site.baseurl }}
 [tennis-ball]: {{ "/public/img/week2/tennis-ball.jpg" | prepend: site.baseurl }}
 [black]: {{ "/public/img/week2/black.jpg" | prepend: site.baseurl }}
-[blueberries]: {{ "/public/img/week2/blueberries.jpg" | prepend: site.baseurl }}

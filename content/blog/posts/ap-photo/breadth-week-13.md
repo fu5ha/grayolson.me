@@ -1,7 +1,7 @@
 ---
 layout: Post
 title: "AP Photo Week 13: Surreal Self Portraits"
- 
+date: 2015-11-20
 ---
 
  
@@ -30,4 +30,3 @@ I will have photos by day 1 the week we come back from break.
 [half-finished]: /assets/img/week13/half-finished.jpg
 [half-painted]: /assets/img/week13/half-painted.jpg
 [half-drawn]: /assets/img/week13/half-drawn.jpg
-[tools]: /assets/img/week13/tools.jpg

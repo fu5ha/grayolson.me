@@ -1,7 +1,7 @@
 ---
 layout: Post
 title: "AP Photo Week 3: Portraits Part 1"
- 
+date: 2015-08-27
 ---
 
  
@@ -47,4 +47,3 @@ day 1.
 [double1]: /assets/img/week3/double1.jpg
 [double2]: /assets/img/week3/double2.jpg
 [lowkey1]: /assets/img/week3/lowkey.jpeg
-[lowkey2]: /assets/img/week3/lowkey2.jpg

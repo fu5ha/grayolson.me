@@ -1,7 +1,7 @@
 ---
 layout: Post
 title: "AP Photo Midterm: Stacked Exposures"
- 
+date: 2015-10-09
 ---
 
  
@@ -24,4 +24,3 @@ Here is an example of one.
 ![Deserted city photo][deserted]
 
 [orion]: /assets/img/week8/orion.jpg
-[deserted]: /assets/img/week8/deserted.jpg

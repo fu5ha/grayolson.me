@@ -1,7 +1,7 @@
 ---
 layout: Post
 title: "Concentration Week 10"
- 
+date: 2016-03-11
 ---
 
  
@@ -20,4 +20,3 @@ Now, I thought I should have a backup concept because if this doesn't
 work then I don't want to have to scramble quite as hard. So, my backup
 plan is to shoot my cousin but doing a very similar concept.
 
-[animal]: /assets/img/concentration/6.jpg

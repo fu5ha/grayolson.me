@@ -1,7 +1,7 @@
 ---
 layout: Post
 title: "AP Photo Week 9: Street Photography"
- 
+date: 2015-10-22
 ---
 
  
@@ -22,4 +22,3 @@ like.
 [street1]: /assets/img/week8/street1.jpg
 [street2]: /assets/img/week8/street2.jpg
 [street3]: /assets/img/week8/street3.jpg
-[street4]: /assets/img/week8/street4.jpg

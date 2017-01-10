@@ -1,7 +1,7 @@
 ---
 layout: Post
 title: "Concentration Week 11"
- 
+date: 2016-03-18
 ---
 
  
@@ -15,4 +15,3 @@ final photo.
 
 ![scientist][scientist]
 
-[scientist]: /assets/img/concentration/4.jpg

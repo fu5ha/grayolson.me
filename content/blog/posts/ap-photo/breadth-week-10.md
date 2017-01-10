@@ -1,7 +1,7 @@
 ---
 layout: Post
 title: "AP Photo Week 10: Texture"
- 
+date: 2015-10-29
 ---
 
  
@@ -18,4 +18,3 @@ next week.
 
 [eye1]: /assets/img/week10/eye1.jpg
 [eye2]: /assets/img/week10/eye2.jpg
-[eye3]: /assets/img/week10/eye3.jpg

@@ -1,7 +1,7 @@
 ---
 layout: Post
 title: "Concentration Week 4"
- 
+date: 2016-01-28
 ---
 
  
@@ -16,4 +16,3 @@ turning in one final photo.
 
 ![scarlet][scarlet]
 
-[scarlet]: /assets/img/s2w1/scarletwitch2.jpg

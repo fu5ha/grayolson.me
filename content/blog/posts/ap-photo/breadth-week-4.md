@@ -1,7 +1,7 @@
 ---
 layout: Post
 title: "AP Photo Week 4: Portraits Part 2"
- 
+date: 2015-09-04
 ---
 
  
@@ -36,4 +36,3 @@ Wednesday.
 [power1]: /assets/img/week4/powergirl.jpg
 [power2]: /assets/img/week4/powergirl1.jpg
 [power3]: /assets/img/week4/powergirl2.jpg
-[sports]: /assets/img/week4/sports.png

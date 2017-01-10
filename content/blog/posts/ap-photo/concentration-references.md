@@ -1,7 +1,7 @@
 ---
 layout: Post
 title: "Concentration Ideas"
- 
+date: 2015-12-13
 ---
 
  
@@ -41,4 +41,3 @@ of references/ideas for concentration images.
 [13]: /assets/img/concentration/13.jpg
 [14]: /assets/img/concentration/14.jpg
 [15]: /assets/img/concentration/15.jpg
-[16]: /assets/img/concentration/16.jpg

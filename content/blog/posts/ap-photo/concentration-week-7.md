@@ -1,7 +1,7 @@
 ---
 layout: Post
 title: "Concentration Week 7"
- 
+date: 2016-02-19
 ---
 
  
@@ -16,4 +16,3 @@ in one final photo again.
 
 ![spirit animal][animal]
 
-[animal]: /assets/img/concentration/6.jpg

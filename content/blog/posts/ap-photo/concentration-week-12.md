@@ -1,7 +1,7 @@
 ---
 layout: Post
 title: "Concentration Week 12"
- 
+date: 2016-03-24
 ---
 
  
@@ -17,4 +17,3 @@ composition with lit model and effects in the center of the frame. I'm
 going to be shooting on Monday during break. I also might do another
 photo at some point during break of a character called Fetch Walker, but
 don't have a specific reference for that one either.
-

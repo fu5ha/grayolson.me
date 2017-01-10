@@ -42,4 +42,3 @@ uses matte painting techniques to combine several photos into a new
 background as well as the dominant blue colors and CG lightning. 12 uses
 desaturated blues and saturated pinks as well as high local contrast on
 the subject to draw viewers' interest.
-

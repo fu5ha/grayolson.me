@@ -1,7 +1,7 @@
 ---
 layout: Post
 title: "Concentration Week 5"
- 
+date: 2016-02-04
 ---
 
  
@@ -14,4 +14,3 @@ final photo.
 
 ![bird][bird]
 
-[bird]: /assets/img/concentration/12.jpg

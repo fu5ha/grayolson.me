@@ -1,7 +1,7 @@
 ---
 layout: Post
 title: "Concentration Week 6"
- 
+date: 2016-02-11
 ---
 
  
@@ -13,4 +13,3 @@ with Noah Pittenger on either Sunday or Monday in the studio at channel
 
 ![lightning man][lightning]
 
-[lightning]: /assets/img/concentration/8.jpg

@@ -1,7 +1,7 @@
 ---
 layout: Post
 title: "AP Photo Week 12: Landscape/Cityscape"
- 
+date: 2015-11-16
 ---
 
  
@@ -16,4 +16,3 @@ mountain near my house looking over the valley. I'll have photos by Thursday.
 ![Photo of downtown phoenix][city2]
 
 [city1]: /assets/img/week12/city1.jpg
-[city2]: /assets/img/week12/city2.jpg

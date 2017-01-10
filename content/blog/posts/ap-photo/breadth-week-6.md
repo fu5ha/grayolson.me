@@ -1,7 +1,7 @@
 ---
 layout: Post
 title: "AP Photo Week 6: Typography"
- 
+date: 2015-09-18
 ---
 
  
@@ -17,4 +17,3 @@ have. I plan to have photos by Day 2 next week.
 
 [type1]: /assets/img/week6/type1.jpg
 [type2]: /assets/img/week6/type2.jpg
-[type3]: /assets/img/week6/type3.jpg

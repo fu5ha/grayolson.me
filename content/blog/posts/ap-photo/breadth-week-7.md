@@ -1,7 +1,7 @@
 ---
 layout: Post
 title: "AP Photo Week 7: Diptychs"
- 
+date: 2015-09-25
 ---
 
  
@@ -17,4 +17,3 @@ the different ways that they store their art.
 
 [dyptich1]: /assets/img/week7/dip1.jpg
 [dyptich2]: /assets/img/week7/dip2.jpg
-
