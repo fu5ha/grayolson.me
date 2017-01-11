@@ -13,7 +13,7 @@ var styles = {
     fontFamily: Cormorant,
     color: colorText,
     fontSize: '2rem',
-    lineHeight: '2rem',
+    lineHeight: '2.25rem',
     marginTop: '-30px',
   }),
   wrapper: css({
@@ -37,27 +37,39 @@ var styles = {
       fontFamily: Helvetica,
       fontSize: '3rem',
       lineHeight: '3.5rem',
-      alignSelf: 'flex-start',
+      alignSelf: 'center',
+      textAlign: 'center',
       color: colorNeutralLight,
       '> strong': {
         padding: '5px 5px',
         background: colorNeutralLight,
         color: colorPrimary,
       },
-      ':nth-of-type(2n)': {
-        textAlign:'right',
-        alignSelf: 'flex-end',
+      '@media(min-width: 750px)': {
+        alignSelf: 'flex-start',
+        textAlign: 'center',
+        ':nth-of-type(2n)': {
+          textAlign:'right',
+          alignSelf: 'flex-end',
+        },
       },
     },
     ' p': {
       marginLeft: '3rem',
       marginRight: 'inherit',
-      ':nth-of-type(2n)': {
-        textAlign:'right',
-        alignSelf: 'flex-end',
-        marginLeft: 'inherit',
-        marginRight: '3rem',
-      },
+      alignSelf: 'center',
+      textAlign: 'center',
+      '@media(min-width: 750px)': {
+        maxWidth: '50rem',
+        alignSelf: 'flex-start',
+        textAlign: 'left',
+        ':nth-of-type(2n)': {
+          alignSelf: 'flex-end',
+          textAlign:'right',
+          marginLeft: 'inherit',
+          marginRight: '3rem',
+        },
+      }
     },
   }),
 }
