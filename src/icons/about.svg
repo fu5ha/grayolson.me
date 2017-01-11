@@ -1,0 +1,15 @@
+<svg width="90px" height="90px" viewBox="675 978 90 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="45" cy="45" r="45"></circle>
+    </defs>
+    <g id="me-icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(675.000000, 978.000000)">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Oval-5" fill="#1D191F" xlink:href="#path-1"></use>
+        <ellipse id="Oval-7" fill="#E66C7E" mask="url(#mask-2)" cx="45" cy="73" rx="33" ry="28"></ellipse>
+        <circle id="Oval-6" fill="#FFFFFF" mask="url(#mask-2)" cx="45" cy="30" r="16"></circle>
+    </g>
+</svg>

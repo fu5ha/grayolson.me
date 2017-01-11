@@ -9,7 +9,8 @@ export var h1Size = {
     type: 'rem'
 }
 
-/*export const Cormorant = css.fontFace({
+export const Helvetica = "'Helvetica Neue', Helvetica"
+export const Cormorant = "'Cormorant Garamond', serif"/*css.fontFace({
     fontFamily: 'Cormorant',
     fontStyle: "normal",
     fontWeight: "normal",

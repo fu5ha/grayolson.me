@@ -1,50 +1,49 @@
-import React from "react"
+import React, {PropTypes} from "react"
 import {css} from "glamor"
 
-import {colorNeutralLight, colorPrimary, colorText, Fjalla} from "../../style-vars"
+import {colorNeutralLight, Helvetica, colorPrimary, colorText, Lato} from "../../style-vars"
 import {toRem} from "../../style-helpers"
 
 const titleSize = 12.0
 const leaderSize = 3.5
 const styles = {
   titleDiv: css({
-    marginTop: '-3rem',
     flex: 1,
     textAlign: 'center',
-  }),
-  title: css({
-    fontFamily: 'Helvetica, sans-serif',
-    fontSize: toRem(titleSize),
-    lineHeight: toRem(titleSize),
-    color: colorPrimary,
-    marginLeft: '1.5rem',
-    marginTop: '0',
-    '@media(max-width: 767px)': {
-      fontSize: toRem(titleSize*2/3),
-      lineHeight: toRem(titleSize*2/3),
-      marginLeft: '1rem'
+    '> h1': {
+      fontFamily: Helvetica,
+      fontSize: toRem(titleSize),
+      lineHeight: toRem(titleSize),
+      color: colorPrimary,
+      marginLeft: '1.5rem',
+      marginTop: '0',
+      '@media(max-width: 767px)': {
+        fontSize: toRem(titleSize*2/3),
+        lineHeight: toRem(titleSize*2/3),
+        marginLeft: '1rem'
+      },
+      '@media(max-width: 374px)': {
+        fontSize: toRem(titleSize*1/2),
+        lineHeight: toRem(titleSize*1/2),
+        marginLeft: '0.5rem'
+      },
     },
-    '@media(max-width: 374px)': {
-      fontSize: toRem(titleSize*1/2),
-      lineHeight: toRem(titleSize*1/2),
-      marginLeft: '0.5rem'
-    },
-  }),
-  leader: css({
-    fontWeight: 200,
-    fontFamily: Fjalla,
-    fontSize: toRem(leaderSize),
-    color: colorText,
-    marginBottom: '-1rem',
-    '@media(max-width: 767px)': {
-      fontSize: toRem(leaderSize*2/3),
-    },
-    '@media(max-width: 374px)': {
-      fontSize: toRem(leaderSize*1/2),
+    '> h2': {
+      fontWeight: 200,
+      fontFamily: Helvetica,
+      fontSize: toRem(leaderSize),
+      color: colorText,
+      marginBottom: '-1rem',
+      '@media(max-width: 767px)': {
+        fontSize: toRem(leaderSize*2/3),
+      },
+      '@media(max-width: 374px)': {
+        fontSize: toRem(leaderSize*1/2),
+      },
     },
   }),
   hero: css({
-    minHeight: '100vh',
+    minHeight: '95vh',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -52,13 +51,16 @@ const styles = {
   }),
 }
 
-const Hero = () => (
+const Hero = ({content}) => (
   <section id="hero" {...styles.hero}>
-    <div {...styles.titleDiv}>
-      <h4 {...styles.leader}>hello, my name is</h4>
-      <h1 {...styles.title}>gray.</h1>
+    <div {...styles.titleDiv}
+      dangerouslySetInnerHTML={{__html: content.innerHTML}}>
     </div>
   </section>
 )
+
+Hero.propTypes = {
+  content: PropTypes.object,
+}
 
 export default Hero
