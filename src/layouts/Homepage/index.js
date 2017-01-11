@@ -3,6 +3,7 @@ import Helmet from "react-helmet"
 import { BodyContainer, joinUri } from "phenomic"
 import { css } from "glamor"
 import Loading from "../../components/Loading"
+import DOMParser from "dom-parser"
 
 import Svg from "react-svg-inline"
 import aboutIcon from "../../icons/about.svg"
