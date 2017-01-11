@@ -15,6 +15,8 @@ npm start
 
 ## Build for production
 
+Generates static files in `./dist`
+
 ```sh
 npm run build
 ```
