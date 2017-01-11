@@ -1,5 +1,5 @@
-# Grayolson.com - [Phenomic](https://github.com/MoOx/phenomic) 
-Version of my personal website built using React and [Phenomic](https://github.com/MoOx/phenomic), a static site generator [ 
+# Grayolson.com
+Myy personal website, built using React and [Phenomic](https://github.com/MoOx/phenomic), a static site generator [ 
 
 ## Install dependencies
 
