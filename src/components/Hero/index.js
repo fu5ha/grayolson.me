@@ -1,7 +1,7 @@
 import React, {PropTypes} from "react"
 import {css} from "glamor"
 
-import {colorNeutralLight, Helvetica, colorPrimary, colorText, Lato} from "../../style-vars"
+import {colorNeutralLight, Helvetica, colorPrimary, colorText} from "../../style-vars"
 import {toRem} from "../../style-helpers"
 
 const titleSize = 12.0
