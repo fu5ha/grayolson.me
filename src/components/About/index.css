@@ -1,8 +1,0 @@
-.about {
-    & h3 {
-        &:nth-child(2n) {
-            color: red;
-            align-self: flex-end;
-        }
-    }
-}

@@ -55,11 +55,11 @@ var styles = {
       },
     },
     ' p': {
-      marginLeft: '3rem',
       marginRight: 'inherit',
       alignSelf: 'center',
       textAlign: 'center',
       '@media(min-width: 750px)': {
+        marginLeft: '3rem',
         maxWidth: '50rem',
         alignSelf: 'flex-start',
         textAlign: 'left',
