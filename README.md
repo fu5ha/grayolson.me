@@ -1,5 +1,5 @@
-# Grayolson.com - [Phenomic](https://github.com/MoOx/phenomic) 
-Version of my personal website built using React and [Phenomic](https://github.com/MoOx/phenomic), a static site generator [ 
+# Grayolson.com
+My personal website, built using React and [Phenomic](https://github.com/MoOx/phenomic), a static site generator [ 
 
 ## Install dependencies
 
@@ -14,6 +14,8 @@ npm start
 ```
 
 ## Build for production
+
+Generates static files in `./dist`
 
 ```sh
 npm run build
