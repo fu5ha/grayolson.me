@@ -113,6 +113,36 @@ const Page = (
     { name: "twitter:description", content: head.description },
     { name: "description", content: head.description },
   ]
+  const navItems = [
+      {
+      to: "/",
+      text: "home",
+      },
+      {
+      to: "/asteroids/",
+      text: "asteroids"
+      },
+      {
+      to: "https://www.artstation.com/artist/termhn",
+      text: "art"
+      },
+      {
+      to: "http://flickr.com/grayolson",
+      text: "photos"
+      },
+      {
+      to: "/blog/",
+      text: "blog"
+      },
+      {
+      to: "https://twitter.com/termhn",
+      text: "twitter"
+      },
+      {
+      to: "https://github.com/termhn/",
+      text: "github"
+      }
+  ]
 
   return (
     <Content>
@@ -121,7 +151,7 @@ const Page = (
         title={ metaTitle }
         meta={ meta }
       />
-      <Header />
+      <Header items={navItems}/>
       <div {...styles.wrapper} {...styles.pageContent}>
         <div {...styles.header} >
           <h1 {...styles.heading}>

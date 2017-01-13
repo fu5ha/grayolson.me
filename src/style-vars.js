@@ -1,10 +1,10 @@
 // import {css} from 'glamor'
 
-export var maxWidth = {
+export const maxWidth = {
     val: 60,
     type: 'rem'
 }
-export var h1Size = {
+export const h1Size = {
     val: 8.0,
     type: 'rem'
 }
@@ -56,6 +56,11 @@ export const Lora = "'Lora', serif"/*css.fontFace({
     fontWeight: 'bold',
     src: "local('Lora'), local(LoraBold), url('/assets/fonts/Lora/Lora-Bold.ttf') format('truetype')"
 })*/
+
+export function easeInOutQuad(x, t, b, c, d) {
+  if ((t/=d/2) < 1) return c/2*t*t + b;
+  return -c/2 * ((--t)*(t-2) - 1) + b;
+}
 
 export var colorPrimaryDark =  "#84132B"
 export var colorPrimary = "#F3315A" //BG 2

@@ -43,6 +43,36 @@ class Homepage extends React.Component {
     }
     
     render() {
+        const navItems = [
+            {
+            to: "#about",
+            text: "about",
+            },
+            {
+            to: "/asteroids/",
+            text: "asteroids"
+            },
+            {
+            to: "https://www.artstation.com/artist/termhn",
+            text: "art"
+            },
+            {
+            to: "http://flickr.com/grayolson",
+            text: "photos"
+            },
+            {
+            to: "/blog/",
+            text: "blog"
+            },
+            {
+            to: "https://twitter.com/termhn",
+            text: "twitter"
+            },
+            {
+            to: "https://github.com/termhn/",
+            text: "github"
+            }
+        ]
         var {
             __url,
             head,
@@ -73,7 +103,7 @@ class Homepage extends React.Component {
             <div {...styles.html} {...styles.body}>
                 <Helmet title={ metaTitle }
                         meta={ meta } />
-                <Header />
+                <Header items={navItems}/>
                 {
                     isLoading
                     ? <Loading />
