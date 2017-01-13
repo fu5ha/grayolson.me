@@ -45,6 +45,10 @@ var styles = {
         background: colorNeutralLight,
         color: colorPrimary,
       },
+      '@media(max-width: 320px)': {
+        fontSize: '2.5rem',
+        lineHeight: '3rem',
+      },
       '@media(min-width: 750px)': {
         alignSelf: 'flex-start',
         textAlign: 'center',
@@ -55,14 +59,20 @@ var styles = {
       },
     },
     ' p': {
-      marginRight: 'inherit',
       alignSelf: 'center',
       textAlign: 'center',
+      marginLeft: '0.5rem',
+      marginRight: '0.5rem',
+      '@media(min-width: 450px)': {
+        marginLeft: '2rem',
+        marginRight: '2rem',
+      },
       '@media(min-width: 750px)': {
-        marginLeft: '3rem',
         maxWidth: '50rem',
         alignSelf: 'flex-start',
         textAlign: 'left',
+        marginLeft: '3rem',
+        marginRight: 'inherit',
         ':nth-of-type(2n)': {
           alignSelf: 'flex-end',
           textAlign:'right',
