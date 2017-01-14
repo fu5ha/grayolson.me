@@ -15,6 +15,10 @@ var styles = {
     fontSize: '2rem',
     lineHeight: '2.25rem',
     marginTop: '-30px',
+    '@media(max-width: 450px)': {
+      fontSize: '1.75rem',
+      lineHeight: '2rem',
+    }
   }),
   wrapper: css({
     display: 'flex',
@@ -25,6 +29,9 @@ var styles = {
     padding: '1rem 0.75rem',
     marginBottom: '6rem',
     marginTop: '5rem',
+    '@media(max-width: 450px)': {
+      marginTop: '3rem',
+    },
     ' h2': {
       fontFamily: Helvetica,
       fontWeight: 900,
@@ -32,6 +39,9 @@ var styles = {
       color: colorNeutralLight,
       alignSelf: 'center',
       margin: '3rem',
+      '@media(max-width: 450px)': {
+        fontSize: '4rem',
+      },
     },
     ' h3': {
       fontFamily: Helvetica,
@@ -52,6 +62,14 @@ var styles = {
           textAlign:'right',
           alignSelf: 'flex-end',
         },
+      },
+      '@media(max-width: 450px)': {
+        fontSize: '2.5rem',
+        lineHeight: '3rem',
+      },
+      '@media(max-width: 350px)': {
+        fontSize: '2rem',
+        lineHeight: '2.5rem',
       },
     },
     ' p': {

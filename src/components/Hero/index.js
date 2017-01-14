@@ -43,7 +43,7 @@ const styles = {
     },
   }),
   hero: css({
-    minHeight: '95vh',
+    minHeight: '92vh',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',

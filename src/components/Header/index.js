@@ -1,6 +1,6 @@
 import React, { PropTypes } from "react"
 import {css} from "glamor"
-import MobileNav from "../MobileNav"
+//import MobileNav from "../MobileNav"
 import DesktopNav from "../DesktopNav"
 import MediaQuery from "react-responsive"
 
@@ -23,9 +23,13 @@ const Header = (props) => {
     <header className={ styles.header }>
       <MediaQuery minWidth={550}>
       {(isDesktop) => {
+        if (!isDesktop) {
+          var items = Array.from(props.items)
+          var mobileItems = items.splice(0, items.length-2)
+        }
         return isDesktop 
         ? <DesktopNav items={props.items} />
-        : <MobileNav items={props.items} />
+        : <DesktopNav items={mobileItems} /> //<MobileNav items={props.items} />
       }}
       </MediaQuery>
     </header>

@@ -31,6 +31,10 @@ const styles = {
     margin: '0 auto',
     padding: 0,
     lineHeight: '3rem',
+    '@media(max-width: 720px)': {
+        //margin: '0 1rem',
+        maxWidth: '90%',
+    },
   }),
   link: css({
     fontFamily: Lato,
