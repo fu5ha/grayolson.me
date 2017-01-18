@@ -10,7 +10,6 @@ var styles = {
     justifyContent: 'flex-start',
     opacity: 0.6,
     fontSize: '0.8rem',
-    textTransform: 'lowercase',
   }),
 }
 

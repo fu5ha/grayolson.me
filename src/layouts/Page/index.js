@@ -4,7 +4,7 @@ import warning from "warning"
 import { BodyContainer, joinUri } from "phenomic"
 
 import {css} from "glamor"
-import {mainStyles, maxWidth, colorPrimary, Fjalla, colorSecondary, Lora} from "../../style-vars"
+import {mainStyles, maxWidth, colorPrimary, HeaderFont, colorSecondary, colorSecondaryDark, Lora} from "../../style-vars"
 import {toCSS} from "../../style-helpers"
 
 // import Button from "../../components/Button"
@@ -39,11 +39,10 @@ var styles = {
   }),
 
   heading: css({
-    fontFamily: Fjalla,
+    fontFamily: HeaderFont,
     color: colorPrimary,
     letterSpacing: '1px',
     lineHeight: '2rem',
-    textTransform: 'lowercase',
   }),
 
   cta: css({
@@ -57,16 +56,18 @@ var styles = {
   body: css({
     fontFamily: Lora,
     fontWeight: "normal",
+    lineHeight: 1.6,
+    letterSpacing: '0.5px',
     '& a': css({
-      color: colorPrimary,
+      color: colorSecondary,
       transition: 'all 0.2s',
       textDecoration: 'none',
       borderBottom: '1px solid transparent',
 
       ':hover': {
         opacity: 1,
-        color: colorSecondary,
-        borderBottomColor: colorSecondary,
+        color: colorSecondaryDark,
+        borderBottomColor: colorSecondaryDark,
       }
     }),
 
@@ -159,11 +160,11 @@ const Page = (
           </h1>
         </div>
         { header }
-        <div {...styles.body}>
+        <div >
           {
             isLoading
             ? <Loading />
-            : <BodyContainer>{ body }</BodyContainer>
+            : <BodyContainer {...styles.body}>{ body }</BodyContainer>
           }
           { children }
         </div>

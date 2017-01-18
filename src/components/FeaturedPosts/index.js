@@ -4,12 +4,12 @@ import {css} from "glamor"
 
 import PagesList from "../../components/PagesList"
 
-import {Fjalla} from "../../style-vars"
+import {HeaderFont} from "../../style-vars"
 
 var styles = {
   latestPosts: css({
     marginTop: "4rem",
-    fontFamily: Fjalla,
+    fontFamily: HeaderFont,
     textAlign: 'center',
   })
 }
@@ -25,7 +25,7 @@ const FeaturedPosts = (props, { collection }) => {
   return (
     <div>
       <h2 {...styles.latestPosts}>
-        { "Featured Posts".toLowerCase() }
+        { "Featured Posts" }
       </h2>
       <PagesList pages={ featuredPosts } />
     </div>

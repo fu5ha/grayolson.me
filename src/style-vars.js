@@ -10,52 +10,12 @@ export const h1Size = {
 }
 
 export const Helvetica = "'Helvetica Neue', Helvetica"
-export const Cormorant = "'Cormorant Garamond', serif"/*css.fontFace({
-    fontFamily: 'Cormorant',
-    fontStyle: "normal",
-    fontWeight: "normal",
-    src: "local('Cormorant Garamond Medium'), local(CormorantGaramondMedium), url('/assets/fonts/Cormorant_Garamond/CormorantGaramond-Medium.ttf') format('truetype')"
-})*/
-/*export const CormorantLight = css.fontFace({
-    fontFamily: 'Cormorant',
-    fontStyle: "light",
-    fontWeight: "light",
-    src: "local('Cormorant Garamond Light'), local(CormorantGaramondLight), url('/assets/fonts/Cormorant_Garamond/CormorantGaramond-Light.ttf') format('truetype')"
-})*/
+export const Cormorant = "'Cormorant Garamond', serif"
+export const Lato = "'Lato', sans-serif"
+export const Fjalla = "'Fjalla One', sans-serif"
+export const Lora = "'Lora', serif"
 
-export const Lato = "'Lato', sans-serif"/*css.fontFace({
-    fontFamily: 'Lato',
-    fontStyle: "normal",
-    fontWeight: "normal",
-    src: "local('Lato Regular'), local(LatoRegular), url('/assets/fonts/Lato/Lato-Regular.ttf') format('truetype')"
-
-})*/
-/*export const LatoLight = css.fontFace({
-    fontFamily: 'Lato',
-    fontStyle: "light",
-    fontWeight: "light",
-    src: "local('Lato Light'), local(LatoLight), url('/assets/fonts/Lato/Lato-Light.ttf') format('truetype')"
-})*/
-
-export const Fjalla = "'Fjalla One', sans-serif"/*css.fontFace({
-    fontFamily: 'Fjalla',
-    fontStyle: 'normal',
-    fontWeight: 'normal',
-    src: "local('Fjalla One'), local(FjallaOneRegular), url('/assets/fonts/Fjalla/FjallaOne-Regular.ttf') format('truetype')"
-})*/
-
-export const Lora = "'Lora', serif"/*css.fontFace({
-    fontFamily: 'Lora',
-    fontStyle: 'normal',
-    fontWeight: 'normal',
-    src: "local('Lora'), local(LoraRegular), url('/assets/fonts/Lora/Lora-Regular.ttf') format('truetype')"
-})*/
-/*export const LoraBold = css.fontFace({
-    fontFamily: 'Lora',
-    fontStyle: 'normal',
-    fontWeight: 'bold',
-    src: "local('Lora'), local(LoraBold), url('/assets/fonts/Lora/Lora-Bold.ttf') format('truetype')"
-})*/
+export const HeaderFont = Helvetica
 
 export function easeInOutQuad(x, t, b, c, d) {
   if ((t/=d/2) < 1) return c/2*t*t + b;
@@ -63,12 +23,12 @@ export function easeInOutQuad(x, t, b, c, d) {
 }
 
 export var colorPrimaryDark =  "#84132B"
-export var colorPrimary = "#F3315A" //BG 2
+export var colorPrimary = "#Fb446f" //BG 2
 export var colorDark = "#3C0511"
 export var colorSecondaryDark = "#558C99"
-export var colorSecondary = "#89D2DC"
+export var colorSecondary = "#79c2cC"
 export var colorNeutralDark = "#1D191F"
-export var colorNeutral = "#2F2F2F" //BG 3
+export var colorNeutral = "#3F222F" //BG 3
 export var colorNeutralLight = "#FFF" //BG 1
 export var colorText = "#1D191F"
 export var colorTextDark = "#3C0511"

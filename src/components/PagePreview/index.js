@@ -4,7 +4,7 @@ import {css} from "glamor"
 
 import Button from "../../components/Button"
 
-import {Lato} from "../../style-vars"
+import {Lato, colorPrimaryDark, colorPrimary, Lora} from "../../style-vars"
 
 var styles = {
   wrapper: css({
@@ -13,6 +13,22 @@ var styles = {
     maxWidth: '40rem',
     margin: '1rem auto',
     padding: '1rem 0',
+    fontFamily: Lora,
+    fontWeight: "normal",
+    lineHeight: 1.6,
+    letterSpacing: '0.5px',
+    '& a': css({
+      color: colorPrimary,
+      transition: 'all 0.2s',
+      textDecoration: 'none',
+      borderBottom: '1px solid transparent',
+
+      ':hover': {
+        opacity: 1,
+        color: colorPrimaryDark,
+        borderBottomColor: colorPrimaryDark,
+      }
+    }),
   }),
   
   smallWrapper: css({
@@ -22,9 +38,12 @@ var styles = {
 
   title: css({
     fontFamily: Lato,
-    alignSelf: 'center',
+    alignSelf: 'flex-start',
     fontSize: '1.2rem',
-    textAlign: 'center',
+    textAlign: 'left',
+    '& a': {
+      color: colorPrimary,
+    }
   }),
 
   meta: css({
@@ -61,7 +80,7 @@ const PagePreview = ({ __url, title, date, description, small }) => {
   return (
     <div className={`${styles.wrapper} ${small && styles.smallWrapper}`}>
       <Link to={ __url } className={`${styles.title} ${small && styles.small}`}>
-        { title.toLowerCase() }
+        { title }
       </Link>
       { small &&
           pageDate &&

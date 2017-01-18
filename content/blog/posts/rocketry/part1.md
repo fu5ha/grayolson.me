@@ -6,7 +6,7 @@ featured: true
 ---
 <a id="org7718ea5"></a>
 
-These are a couple ideas I had for the rocketry assignment I am doing in my intro to engineering class. The objective is to make a rocket that flies as close to 300ft as possible and lands in as close to 30 seconds as possible.
+Today we started a rocketry assignment in my engineering class. The objective is to make a model rocket that has an apogee of as close to 300ft as possible and that touches down in as close to 30 seconds as possible. I have a few ideas for possible designs, which I've written down here. Next I'll recreate them in OpenRocket and see what they look like.
 
 ### Small & light - Primary:
 
