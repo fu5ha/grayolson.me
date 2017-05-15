@@ -72,8 +72,21 @@ var styles = {
     }),
 
     /* handy for content */
+    '& h1': css({
+      fontFamily: HeaderFont,
+      textAlign: 'center',
+      color: colorPrimary,
+    }),
+    '& h2': css({
+      fontFamily: HeaderFont,
+      textAlign: 'center',
+      color: colorPrimary,
+    }),
+    '& h3': css({
+      fontFamily: HeaderFont,
+    }),
     '& img': css({
-      maxWidth: '100%',
+      maxWidth: '48%',
     }),
   }),
 }
