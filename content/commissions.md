@@ -22,6 +22,7 @@ Hi there! Thanks for looking at my commissions information. If you end up wantin
 ![Kiss](https://cdna.artstation.com/p/assets/images/images/003/058/916/large/gray-olson-rgd.jpg?1469117272)
 ![Spartan](https://cdna.artstation.com/p/assets/images/images/004/393/210/large/gray-olson-spartan-study.jpg?1483370491)
 ![Bastion](https://cdna.artstation.com/p/assets/images/images/004/393/198/large/gray-olson-hoogz2.jpg?1483370417)
+![Risque](https://cdnb.artstation.com/p/assets/images/images/003/058/883/large/gray-olson-mercykitty-color.jpg?1469116870)
 
 ### Digital Flat Color Portrait: $40
 
