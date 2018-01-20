@@ -21,6 +21,6 @@ to find some photos that caught my eye to use as inspiration.
 I want to begin shooting on Saturday or Sunday and have at least two of my images
 ready to edit by day one.
 
-[vase]: {{ "/public/img/week2/vase.jpg" | prepend: site.baseurl }}
-[tennis-ball]: {{ "/public/img/week2/tennis-ball.jpg" | prepend: site.baseurl }}
-[black]: {{ "/public/img/week2/black.jpg" | prepend: site.baseurl }}
+[vase]: /assets/img/week2/vase.jpg
+[tennis-ball]: /assets/img/week2/tennis-ball.jpg
+[black]: /assets/img/week2/black.jpg

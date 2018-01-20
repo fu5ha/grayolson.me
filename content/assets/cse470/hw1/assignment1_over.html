@@ -1,0 +1,73 @@
+<!-- Gray Olson
+CSE 470 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+<title>3D Sierpinski Gasket</title>
+
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+precision mediump float;
+
+// HW470
+varying vec4 fColor;
+
+uniform float uTime;
+uniform vec2 uResolution;
+
+void main()
+{
+    // HW470
+    vec2 uv = gl_FragCoord.xy / uResolution;
+    float b = gl_FragCoord.z / uResolution.x;
+    gl_FragColor = fColor + vec4(uv, b, 1.);
+}
+</script>
+
+<script id="vertex-shader" type="x-shader/x-vertex">
+// HW470 all
+#define PI 3.14159265
+
+attribute vec4 vPosition;
+attribute vec3 vColor;
+
+varying vec4 fColor;
+
+uniform mat4 uProjection;
+uniform mediump float uTime;
+
+mat4 makeRotation3d(vec3 axis, float angle) {
+    axis = normalize(axis);
+    float s = sin(angle);
+    float c = cos(angle);
+    float oc = 1.0 - c;
+    
+    return mat4(oc * axis.x * axis.x + c,           oc * axis.x * axis.y - axis.z * s,  oc * axis.z * axis.x + axis.y * s,  0.0,
+                oc * axis.x * axis.y + axis.z * s,  oc * axis.y * axis.y + c,           oc * axis.y * axis.z - axis.x * s,  0.0,
+                oc * axis.z * axis.x - axis.y * s,  oc * axis.y * axis.z + axis.x * s,  oc * axis.z * axis.z + c,           0.0,
+                0.0,                                0.0,                                0.0,                                1.0);
+}
+void main()
+{
+    float d = distance(vPosition.xyz, vec3(0., 0., 0.));
+    mat4 warp = makeRotation3d(vec3(0., 1., 0.), PI/3.*d*sin(uTime*1.25));
+    mat4 rot = makeRotation3d(vec3(1., 0., 0.), -PI/8.) * makeRotation3d(vec3(0., 1., 0.), PI/6. - uTime + PI/3.*(cos(uTime*1.25) + 1.));
+    mat4 totalRot = rot * warp;
+    fColor = vec4(vColor, 1.0);
+    gl_Position = uProjection * totalRot * vPosition;
+}
+</script>
+
+<script type="text/javascript" src="../Common/webgl-utils.js"></script>
+<script type="text/javascript" src="../Common/initShaders.js"></script>
+<script type="text/javascript" src="../Common/MV.js"></script>
+<script type="text/javascript" src="assignment1_over.js"></script>
+</head>   
+
+<body>
+<canvas id="gl-canvas" width="720" height="480" padding="0" margin="0">
+Oops ... your browser doesn't support the HTML5 canvas element
+</canvas>
+</body>
+</html>

@@ -2,7 +2,6 @@
 layout: Post
 title: "Rocketry Part 1: Initial Design Ideas"
 date: 2017-01-09
-featured: true
 ---
 <a id="org7718ea5"></a>
 

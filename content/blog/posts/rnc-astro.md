@@ -2,6 +2,7 @@
 layout: Post
 title: "Astrophotography Processing with Free Software the Roger Clark Way"
 date: 2017-02-25
+featured: true
 ---
 
 I made a video about astrophotography processing. I also modified a couple of Roger Clark's scripts to work better on windows. I might re-write them in python at some point in the future, not sure.

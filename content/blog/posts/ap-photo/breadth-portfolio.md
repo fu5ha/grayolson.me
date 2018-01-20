@@ -2,7 +2,6 @@
 layout: Post
 title: "AP Photo Breadth Portfolio"
 date: 2015-12-18
-featured: true
 ---
 
 This is a culmination of all the photos I took this semester and some that I took previously.
