@@ -17,7 +17,11 @@ const Post = (props) => {
   // it's up to you to choose what to do with this layout ;)
   const pageDate = props.head.date ? new Date(props.head.date) : null
 
-  setTimeout(() => window.MathJax.Hub.Queue(["Typeset",window.MathJax.Hub]), 1000);
+  setTimeout(() => {
+    if (typeof window !== 'undefined') {
+      window.MathJax.Hub.Queue(["Typeset",window.MathJax.Hub])
+    }
+  }, 1000);
 
   return (
     <Page
