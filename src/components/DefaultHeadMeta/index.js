@@ -11,6 +11,7 @@ const DefaultHeadMeta = (props, { metadata: { pkg } }) => (
       ] }
       script={ [
         { src: "https://cdn.polyfill.io/v2/polyfill.min.js" },
+        { src: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML" },
         ...props.scripts ? props.scripts : [],
       ] }
     />

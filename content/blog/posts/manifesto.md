@@ -2,8 +2,18 @@
 layout: Post
 title: "The Hacker Manifesto"
 date: 2018-02-06
-featured: true
 ---
+
+  **Note**: This is a very slightly edited copy/mirror of a fairly famous piece of writing
+originally published in the magazine *Phrack* in 1986 by "The Mentor." Many have found
+it struck a chord with them, and it has with me. Though my story is not perfectly aligned,
+it is similar, and though the technology is different, the themes are the same. I've been
+fortunate enough to have mostly good teachers that have fostered and encouraged my curiosity,
+but I certainly still relate to the way that the author feels in this way--held back by 
+bureaucracy of the system and fighting through being beat into uncreative, samey people.
+I hope anyone who stumbles upon this enjoys it as well.
+
+### The Hacker Manifesto
 
   Another one got caught today, it's all over the papers.  "Teenager
 Arrested in Computer Crime Scandal", "Hacker Arrested after Bank Tampering"...

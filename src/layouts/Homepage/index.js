@@ -48,10 +48,10 @@ class Homepage extends React.Component {
             to: "#about",
             text: "about",
             },
-            {
-            to: "/asteroids/",
-            text: "asteroids"
-            },
+            // {
+            // to: "/asteroids/",
+            // text: "asteroids"
+            // },
             {
             to: "https://www.artstation.com/artist/termhn",
             text: "art"
@@ -65,7 +65,7 @@ class Homepage extends React.Component {
             text: "blog"
             },
             {
-            to: "https://twitter.com/termhn",
+            to: "https://twitter.com/fu5ha",
             text: "twitter"
             },
             {
