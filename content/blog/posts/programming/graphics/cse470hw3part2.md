@@ -5,7 +5,7 @@ date: 2018-01-19
 featured: true
 ---
 
-*This is a continuation from part 1 of this blog, which you can read [here](https://www.grayolson.com/blog/programming/graphics/cs470hw3) If you haven't read yet, here's a brief introduction:* I didn't write a blog on assignment 2 because it's wasn't overly interesting--just making a set of rotating cubes. However, assignment 3 was fairly fun and interesting and I think deserves its own blog post. First, you can visit this page to get a demo of what it is: https://termhn.github.io/asu-cse470/assignment3
+*This is a continuation from part 1 of this blog, which you can read [here](/blog/posts/programming/graphics/cs470hw3) If you haven't read yet, here's a brief introduction:* I didn't write a blog on assignment 2 because it's wasn't overly interesting--just making a set of rotating cubes. However, assignment 3 was fairly fun and interesting and I think deserves its own blog post. First, you can visit this page to get a demo of what it is: https://termhn.github.io/asu-cse470/assignment3
 
 Part 1 of this blog covered the math behind creating a surface of revolution, and this part 2 will cover the math behind the Phong illumination model and different methods of implementation.
 

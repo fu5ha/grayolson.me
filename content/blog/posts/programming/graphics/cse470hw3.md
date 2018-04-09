@@ -52,4 +52,4 @@ However, since we don't care about the length of this vector since we are going 
 
 Yay! Now we just do that calculation for each \`t\` and \`theta\` when we discretize the surface and put the new normal vectors in their own array buffer to be used later as well.
 
-*Continued [in part 2 here](/blog/programming/graphics/cse470hw3part2), which talks about the actual lighting calculations*
+*Continued [in part 2 here](/blog/posts/programming/graphics/cse470hw3part2), which talks about the actual lighting calculations*
