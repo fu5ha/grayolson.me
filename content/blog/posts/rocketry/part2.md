@@ -2,7 +2,6 @@
 layout: Post
 title: "Rocketry Part 2: Open Rocket Simulation & Final Design"
 date: 2017-01-18
-featured: true
 ---
 
 Continuing on from [last time](https://www.grayolson.me/blog/posts/rocketry/part1/), the next thing to do was to create these loose concepts in a piece of software called [Open Rocket](http://openrocket.sourceforge.net/) which allows you to quickly ideate and refine rocket designs based on the results of simulations with different motors and recovery devices. My rocket ended up looking like this:

@@ -132,10 +132,10 @@ const Page = (
       to: "/",
       text: "home",
       },
-      {
-      to: "/asteroids/",
-      text: "asteroids"
-      },
+      // {
+      // to: "/asteroids/",
+      // text: "asteroids"
+      // },
       {
       to: "https://www.artstation.com/artist/termhn",
       text: "art"
@@ -149,7 +149,7 @@ const Page = (
       text: "blog"
       },
       {
-      to: "https://twitter.com/termhn",
+      to: "https://twitter.com/fu5ha",
       text: "twitter"
       },
       {
