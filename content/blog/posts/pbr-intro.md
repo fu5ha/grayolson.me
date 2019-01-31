@@ -59,7 +59,7 @@ Therefore, *only the part of the incident light which is directly reflected will
 
 In dielectrics (non-metals, insulators), there is not an excess of free elecrons to absorb the transmitted light, and so that refracted light continues into the new medium and the "scattering" process that we discussed at the very beginning for light passing through a particiating medium is allowed to take place. For 'solid' materials, the amount of scatering is very high, and the amount of attenuation is also quite high, so the light does not penetrate very far. However, it does penetrate far enough to scatter, be attenuated by pigment or other colored particles inside the material, and then be ejected back out from the surface.
 
-![dielectric transmission](/assets/img/graphics/dielecric-trans.png)
+![dielectric transmission](/assets/img/graphics/dielectric-trans.png)
 
 This creates the traditional "diffuse" style lighting actually comes from, and it is called "subsurface scattering." You may have heard of a special kind of material or shader which uses subsurface scattering. The only difference between tradional "diffuse" scattering and this effect which so often gets called "subsurface scattering," is the scale at which the scattering happens. If a ray of light will enter the surface, be scattered, and then re-emerge from the surface all within an area smaller than what will become one pixel on the screen, then we get a "diffuse lighting" effect. If, on the other hand, a ray of light can enter the surface, be scattered, and then reemerge somewhere else (from a different pixel), then we need a different, more complex algorithm to try to mimic that, and that is why we have special "subsurface scatering" shaders.
 
