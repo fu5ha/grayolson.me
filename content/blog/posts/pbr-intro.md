@@ -4,7 +4,7 @@ title: "An Intro to Physically Based Rendering for Artists and Programmers - Par
 date: 2019-01-31
 featured: true
 ---
-*Note: All figures in this article are from the book [Real-Time Rendering](https://realtimerendering.com/), reused under Fair Use*
+*Note: All figures in this article are from the book [Real-Time Rendering](http://realtimerendering.com/), reused under Fair Use*
 
 Physically Based Rendering is a broad term that could potentially mean many different things depending on the exact context in which it is being used, but the defining characteristic is that there is an attempt being made to emulate or approximate real, physical processes as closely as is practical to create an image.
 
