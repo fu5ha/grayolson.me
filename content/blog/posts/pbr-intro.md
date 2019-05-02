@@ -36,9 +36,9 @@ The ratio between the portion of the power of the original light ray which is re
 
 Imagine there is a baseline 'reflectiveness' of a surface, which is the ratio of the original ray's power which is reflected rather than refracted. Now imagine that this ratio increases towards 1.0 as the surface curves away from the incident light vector, so that at "grazing angles" (when the normal of the surface is perpendicular to the incident vector), almost all of the original ray is reflected rather than refracted. We can see that this has a very important effect on the look of objects, and while it is most obvious on materials like water, it happens even on materials like cardboard and brick. The remaining light which is not reflected is refracted and begins to be ransmitted through the new medium, just as we discussed above.
 
-The final piece of the puzzle here is that what we man by "power" is actually the amount of light at different wavelengths, aka the color of the ray. Just as we discussed at the very beginning, when a ray of light is reflected or refracted, it may be attenuated (its color and power changed).
+The final piece of the puzzle here is that what we mean by "power" is actually the amount of light at different wavelengths, aka the color of the ray. Just as we discussed at the very beginning, when a ray of light is reflected or refracted, it may be attenuated (its color and power changed).
 
-What we've discusses so far only applies to a perfectly smooth, very small section of the interface between two mediums, but this doesn't alow us to fully simulate what we want to be able to, which is are real world surfaces at a more macroscopic scale. For this, we need something called "Mircofacet Theory," which builds upon the very basic interactions we've defined so far.
+What we've discussed so far only applies to a perfectly smooth, very small section of the interface between two mediums, but this doesn't allow us to fully simulate what we want to be able to: real world surfaces at a more macroscopic scale. For this, we need something called "Mircofacet Theory," which builds upon the very basic interactions we've defined so far.
 
 ## Metalness
 
