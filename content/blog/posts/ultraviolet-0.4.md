@@ -7,7 +7,7 @@ featured: false
 
 ## Introduction
 
-For those unfamiliar, [ultraviolet](https://github.com/termhn/ultraviolet) is a crate to computer-graphics and games-related linear algebra, but *fast*,
+For those unfamiliar, [ultraviolet](https://github.com/termhn/ultraviolet) is a crate to do computer-graphics and games-related linear algebra, but *fast*,
 both in terms of productivity and in terms of runtime performance. In terms of productivity, ultraviolet uses
 no generics and is designed to be as straightforward of an interface as possible, resulting in fast compilation
 times and clear code. In addition, the lack of generics and Rust type-system "hacks" results in clear and concise
