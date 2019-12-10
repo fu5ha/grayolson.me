@@ -1,13 +1,13 @@
 ---
 layout: Post
-title: "`ultraviolet` 0.4 Released"
+title: "ultraviolet 0.4 Released"
 date: 2019-12-9
 featured: false
 ---
 
 ## Introduction
 
-For those unfamiliar, [`ultraviolet`](https://github.com/termhn/ultraviolet) is a crate to computer-graphics and games-related linear algebra, but *fast*,
+For those unfamiliar, [ultraviolet](https://github.com/termhn/ultraviolet) is a crate to computer-graphics and games-related linear algebra, but *fast*,
 both in terms of productivity and in terms of runtime performance. In terms of productivity, ultraviolet uses
 no generics and is designed to be as straightforward of an interface as possible, resulting in fast compilation
 times and clear code. In addition, the lack of generics and Rust type-system "hacks" results in clear and concise
@@ -26,10 +26,10 @@ computer graphics math, including:
 
 * Several upgrades to the homogeneous Mat4 and Mat3 types, including several helper functions for creating translation, scale,
 rotation matrices, 'look-at' matrices, and inverses.
-* A [`transform`](https://docs.rs/ultraviolet/0.4.3/ultraviolet/transform/index.html) module which contains Isometry/Similarity
+* A [transform](https://docs.rs/ultraviolet/0.4.3/ultraviolet/transform/index.html) module which contains Isometry/Similarity
 types (also known as "rigid body transformations"). These types encapsulate a rotation (+ scaling) followed by a translation in
 a more memory- and time-efficient package than a full homogeneous Mat4.
-* A [`projection`](https://docs.rs/ultraviolet/0.4.3/ultraviolet/projection/index.html) module which contains projection matrix
+* A [projection](https://docs.rs/ultraviolet/0.4.3/ultraviolet/projection/index.html) module which contains projection matrix
 constructors for all the most common 'source' coordinate spaces that are designed to work directly with specific graphics APIs
 (i.e OpenGL, DirectX, and Vulkan), which each have their own little quirks. Includes orthographic and several variants of projection
 matrices including reversed and infinite variants which can improve depth fighting performance with floating point depth buffers.
