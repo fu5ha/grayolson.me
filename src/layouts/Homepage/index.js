@@ -53,7 +53,7 @@ class Homepage extends React.Component {
             // text: "asteroids"
             // },
             {
-            to: "https://www.artstation.com/artist/termhn",
+            to: "https://www.artstation.com/grayolson",
             text: "art"
             },
             {
