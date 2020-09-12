@@ -30,11 +30,13 @@ The headlining features are
 These are two features that have been at the top of 'the wishlist' for some time now, and I'm excited to finally land them! 256-bit/AVX support is particularly exciting for me, as some workloads that I'm interested in (namely [rayn](https://github.com/termhn/rayn), my pathtracing renderer) should be able to get a fairly significant performance boost. In a test of purely the ray-sphere intersection test (which may be used in a renderer), you can see this starting to take shape (glam here is used to represent an optimized 'scalar' implementation, i.e. SIMD accelerated but horizontally rather than vertically as ultraviolet does):
 
 #### ray-sphere intersection x 80,000 rays
-* `glam` - 917.0 *us*
+* `glam (f32x1)` - 917.0 *us*
 * `ultraviolet_f32x4` - 170.3 *us*
 * __`ultraviolet_f32x8` - 100.9 *us*__
 
-*Note: benchmarks performed on an i5 Mid-2014 Macbook Pro, and may vary significantly per processor/computer*
+*Note: this isn't an apples-to-apples comparison... the algorithm needed to use the wide ultraviolet types is different than the standard one which may be used by scalar types like glam's. So while there is a lot of potential performance on the table, it's not "free".*
+
+*Note 2: benchmarks performed on an i5 Mid-2014 Macbook Pro, and may vary significantly per processor/computer*
 
 In addition, there's been various other improvements, bug fixes, and enhancements, including significant performance improvements for Rotor-transform-vector operations. Here's the relevant benchmark:
 
@@ -42,6 +44,8 @@ In addition, there's been various other improvements, bug fixes, and enhancement
 * `glam` - 6.4543 *ns*
 * `ultraviolet` 0.5 - 7.4728 *ns*
 * __`ultraviolet` 0.6 - 6.1521 *ns*__
+
+*This is an apples-to-apples comparison, all three just using standard scalar f32s, not wide-style SIMD types.*
 
 Finally, support for [mint](https://github.com/kvark/mint) landed for most scalar types, which is great for interoperation between `ultraviolet` and other Rust math crates, as well as making it easier to use `ultraviolet` with [ggez](https://github.com/ggez/ggez).
 
