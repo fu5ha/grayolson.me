@@ -49,7 +49,7 @@ const Footer = () => (
   <footer {...styles.footerContainer}>
     <div {...styles.footer}>
       <p {...styles.copy}>
-        <span>&copy;</span> { "Gray Olson 2017".toLowerCase() }
+        <span>&copy;</span> {"Gray Olson 2021".toLowerCase()}
       </p>
       <p {...styles.phenomicReference}>
         <a
