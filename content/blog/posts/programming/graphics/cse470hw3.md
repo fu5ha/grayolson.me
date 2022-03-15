@@ -6,9 +6,9 @@ featured: true
 ---
 
 
-I didn't write a blog on assignment 2 because it's wasn't overly interesting--just making a set of rotating cubes. However, assignment 3 was fairly fun and interesting and I think deserves its own blog post. First, you can visit this page to get a demo of what it is: https://termhn.github.io/asu-cse470/assignment3
+I didn't write a blog on assignment 2 because it's wasn't overly interesting--just making a set of rotating cubes. However, assignment 3 was fairly fun and interesting and I think deserves its own blog post. First, you can visit this page to get a demo of what it is: <https://fu5ha.github.io/asu-cse470/assignment3>
 
-The same concepts talked about in this and the next blog post are also the basis for this more complete scene renderer that I made which is based on a simplified version of THREE.js' structure: https://termhn.github.io/asu-cse470/assignment4
+The same concepts talked about in this and the next blog post are also the basis for this more complete scene renderer that I made which is based on a simplified version of THREE.js' structure: <https://fu5ha.github.io/asu-cse470/assignment4>
 
 The main interesting things that are happening here are the creation of the surface(s) of revolution and the lighting calculations.
 

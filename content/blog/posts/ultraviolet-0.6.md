@@ -7,7 +7,7 @@ featured: false
 
 ## Introduction
 
-For those unfamiliar, [ultraviolet](https://github.com/termhn/ultraviolet) is a crate to do computer-graphics and games-related linear algebra, but *fast*,
+For those unfamiliar, [ultraviolet](https://github.com/fu5ha/ultraviolet) is a crate to do computer-graphics and games-related linear algebra, but *fast*,
 both in terms of productivity and in terms of runtime performance. In terms of productivity, ultraviolet uses
 no generics and is designed to be as straightforward of an interface as possible, resulting in fast compilation
 times and clear code. In addition, the lack of generics and Rust type-system "hacks" results in clear and concise
@@ -27,7 +27,7 @@ The headlining features are
 * Support for 256-bit wide AVX vectors and instructions as well as 128-bit wide SSE instructions which were already supported.
 * Support for f64/double precision floats under the `f64` feature, including `f64x2` and `f64x4` SIMD-accelerated types.
 
-These are two features that have been at the top of 'the wishlist' for some time now, and I'm excited to finally land them! 256-bit/AVX support is particularly exciting for me, as some workloads that I'm interested in (namely [rayn](https://github.com/termhn/rayn), my pathtracing renderer) should be able to get a fairly significant performance boost. In a test of purely the ray-sphere intersection test (which may be used in a renderer), you can see this starting to take shape (glam here is used to represent an optimized 'scalar' implementation, i.e. SIMD accelerated but horizontally rather than vertically as ultraviolet does):
+These are two features that have been at the top of 'the wishlist' for some time now, and I'm excited to finally land them! 256-bit/AVX support is particularly exciting for me, as some workloads that I'm interested in (namely [rayn](https://github.com/fu5ha/rayn), my pathtracing renderer) should be able to get a fairly significant performance boost. In a test of purely the ray-sphere intersection test (which may be used in a renderer), you can see this starting to take shape (glam here is used to represent an optimized 'scalar' implementation, i.e. SIMD accelerated but horizontally rather than vertically as ultraviolet does):
 
 #### ray-sphere intersection x 80,000 rays
 * `glam (f32x1)` - 917.0 *us*
@@ -68,4 +68,4 @@ Finally, support for [mint](https://github.com/kvark/mint) landed for most scala
 - Add `Mat2::inverse()`
 
 If you're interested, go [check it out on crates.io](https://crates.io/crates/ultraviolet), use it, and let me know if you have
-any issues or other feedback by visiting the [GitHub issue tracker](https://github.com/termhn/ultraviolet/)!
+any issues or other feedback by visiting the [GitHub issue tracker](https://github.com/fu5ha/ultraviolet/)!

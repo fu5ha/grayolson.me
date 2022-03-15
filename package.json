@@ -3,7 +3,7 @@
   "name": "grayolson-me",
   "homepage": "https://www.grayolson.me/",
   "twitter": "Fu5ha",
-  "repository": "https://github.com/termhn/grayolson.me.git",
+  "repository": "https://github.com/fu5ha/grayolson.me.git",
   "scripts": {
     "lint:js": "eslint --ignore-path .gitignore --fix .",
     "lint:css": "stylelint \"src/**/*.css\"",

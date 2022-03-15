@@ -69,7 +69,7 @@ class Homepage extends React.Component {
             text: "twitter"
             },
             {
-            to: "https://github.com/termhn/",
+                to: "https://github.com/fu5ha/",
             text: "github"
             }
         ]

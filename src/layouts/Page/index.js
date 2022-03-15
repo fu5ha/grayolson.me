@@ -141,8 +141,8 @@ const Page = (
       text: "art"
       },
       {
-      to: "http://flickr.com/grayolson",
-      text: "photos"
+        to: "https://www.youtube.com/channel/UCRoVzHvZ_h2rHy-ef4sUQ3w",
+        text: "videos"
       },
       {
       to: "/blog/",
@@ -153,7 +153,7 @@ const Page = (
       text: "twitter"
       },
       {
-      to: "https://github.com/termhn/",
+        to: "https://github.com/fu5ha/",
       text: "github"
       }
   ]
