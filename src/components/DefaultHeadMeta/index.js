@@ -5,7 +5,7 @@ const DefaultHeadMeta = (props, { metadata: { pkg } }) => (
   <div hidden>
     <Helmet
       meta={ [
-        { property: "og:site_name", content: pkg.name },
+        { property: "og:site_name", content: pkg.site_name },
         { name: "twitter:site", content: `@${ pkg.twitter }` },
         ...props.meta ? props.meta : [],
       ] }
@@ -22,6 +22,7 @@ const DefaultHeadMeta = (props, { metadata: { pkg } }) => (
         name: "viewport", content: "width=device-width, initial-scale=1",
       } ] }
     />
+    <a rel="me" href={`${pkg.mastodon}`}></a>
     <style>{ "@-ms-viewport { width: device-width; }" }</style>
   </div>
 )

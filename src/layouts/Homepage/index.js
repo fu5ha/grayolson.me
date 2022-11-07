@@ -19,6 +19,7 @@ import About from "../../components/About"
 // import BlogPreview from "../../components/BlogPreview"
 
 import {mainStyles} from "../../style-vars"
+import defaultNavItems from "../../default-nav-items"
 
 const styles = {
     html: css(mainStyles.html),
@@ -48,31 +49,8 @@ class Homepage extends React.Component {
             to: "#about",
             text: "about",
             },
-            // {
-            // to: "/asteroids/",
-            // text: "asteroids"
-            // },
-            {
-            to: "https://www.artstation.com/grayolson",
-            text: "art"
-            },
-            {
-            to: "http://flickr.com/grayolson",
-            text: "photos"
-            },
-            {
-            to: "/blog/",
-            text: "blog"
-            },
-            {
-            to: "https://twitter.com/fu5ha",
-            text: "twitter"
-            },
-            {
-                to: "https://github.com/fu5ha/",
-            text: "github"
-            }
         ]
+        navItems.concat(defaultNavItems)
         var {
             __url,
             head,

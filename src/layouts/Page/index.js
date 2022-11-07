@@ -6,6 +6,7 @@ import { BodyContainer, joinUri } from "phenomic"
 import {css} from "glamor"
 import {mainStyles, maxWidth, colorPrimary, HeaderFont, colorSecondary, colorSecondaryDark, Lora} from "../../style-vars"
 import {toCSS} from "../../style-helpers"
+import defaultNavItems from "../../default-nav-items"
 
 // import Button from "../../components/Button"
 import Loading from "../../components/Loading"
@@ -127,36 +128,13 @@ const Page = (
     { name: "twitter:description", content: head.description },
     { name: "description", content: head.description },
   ]
-  const navItems = [
+  var navItems = [
       {
       to: "/",
       text: "home",
-      },
-      // {
-      // to: "/asteroids/",
-      // text: "asteroids"
-      // },
-      {
-      to: "https://www.artstation.com/grayolson",
-      text: "art"
-      },
-      {
-        to: "https://www.youtube.com/channel/UCRoVzHvZ_h2rHy-ef4sUQ3w",
-        text: "videos"
-      },
-      {
-      to: "/blog/",
-      text: "blog"
-      },
-      {
-      to: "https://twitter.com/fu5ha",
-      text: "twitter"
-      },
-      {
-        to: "https://github.com/fu5ha/",
-      text: "github"
-      }
+    },
   ]
+  navItems.concat(defaultNavItems)
 
   return (
     <Content>

@@ -1,8 +1,10 @@
 {
   "private": true,
   "name": "grayolson-me",
+  "site_name": "Gray Olson",
   "homepage": "https://www.grayolson.me/",
-  "twitter": "Fu5ha",
+  "twitter": "fu5ha",
+  "mastodon": "https://mastodon.art/@fu5ha",
   "repository": "https://github.com/fu5ha/grayolson.me.git",
   "scripts": {
     "lint:js": "eslint --ignore-path .gitignore --fix .",
