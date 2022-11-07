@@ -128,13 +128,13 @@ const Page = (
     { name: "twitter:description", content: head.description },
     { name: "description", content: head.description },
   ]
-  var navItems = [
+  const navItems = [
       {
       to: "/",
       text: "home",
     },
+    ...defaultNavItems
   ]
-  navItems.concat(defaultNavItems)
 
   return (
     <Content>

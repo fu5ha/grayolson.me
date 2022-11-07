@@ -49,8 +49,8 @@ class Homepage extends React.Component {
             to: "#about",
             text: "about",
             },
+            ...defaultNavItems
         ]
-        navItems.concat(defaultNavItems)
         var {
             __url,
             head,
