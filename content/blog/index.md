@@ -11,7 +11,7 @@ find me on:
 - GitHub [@fu5ha](https://github.com/fu5ha/)
 - Twitch [@fu5ha](https://twitch.tv/fu5ha)
 - YouTube as [Gray Olson](https://www.youtube.com/channel/UCWAK52zU792dFPLSxRwN-6A) and [Fusha](https://www.youtube.com/channel/UCRoVzHvZ_h2rHy-ef4sUQ3w)
-- Mastodon [@fu5ha@mastodon.art](https://www.mastodon.art/@fu5ha) (you can also search @gray@fusha.moe)
+- Mastodon [@fu5ha@mastodon.art](https://mastodon.art/@fu5ha) (you can also search @gray@fusha.moe)
 - Cohost [@fu5ha](https://cohost.org/fu5ha)
 
 ---
