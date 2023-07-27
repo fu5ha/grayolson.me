@@ -13,5 +13,6 @@ find me on:
 - YouTube as [Gray Olson](https://www.youtube.com/channel/UCWAK52zU792dFPLSxRwN-6A) and [Fusha](https://www.youtube.com/channel/UCRoVzHvZ_h2rHy-ef4sUQ3w)
 - Mastodon [@fu5ha@mastodon.art](https://mastodon.art/@fu5ha) (you can also search @gray@fusha.moe)
 - Cohost [@fu5ha](https://cohost.org/fu5ha)
+- Bluesky [@fu5ha.bluesky.social](https://bsky.app/profile/fu5ha.bsky.social)
 
 ---

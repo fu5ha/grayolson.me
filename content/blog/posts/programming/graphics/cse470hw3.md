@@ -2,7 +2,7 @@
 layout: Post
 title: "CSE 470 Assignment 3 Part 1 - Surfaces of Revolution"
 date: 2018-01-19
-featured: true
+featured: false
 ---
 
 

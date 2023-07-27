@@ -2,7 +2,7 @@
 layout: Post
 title: "Twirly Sierpinski Gaskets in WebGL -- CSE 470 Assignment 1"
 date: 2018-01-19
-featured: true
+featured: false
 ---
 
 I am taking a class on Computer Graphics programming this semester, and we were recently given our first assignment. It's fairly basic, but since I've done some graphics programming in the past, I decided I'd try to spruce it up a little bit. The idea is to create a Sierpinski Gasket (in this case a triangle) and then apply a coordinate transformation to warp it. First this is just done in 2d and ends up like so:

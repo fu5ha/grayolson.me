@@ -2,7 +2,7 @@
 layout: Post
 title: "CSE 470 Assignment 3 Part 2 - Gourad/Phong Shading"
 date: 2018-01-19
-featured: true
+featured: false
 ---
 
 *This is a continuation from part 1 of this blog, which you can read [here](/blog/posts/programming/graphics/cs470hw3)*
