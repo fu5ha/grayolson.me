@@ -4,7 +4,7 @@ import warning from "warning"
 import { BodyContainer, joinUri } from "phenomic"
 
 import {css} from "glamor"
-import {mainStyles, maxWidth, colorPrimary, HeaderFont, colorSecondary, colorSecondaryDark, Lora} from "../../style-vars"
+import { mainStyles, maxWidth, colorPrimary, HeaderFont, colorSecondary, colorSecondaryDark, Lora, colorTextLight } from "../../style-vars"
 import {toCSS} from "../../style-helpers"
 import defaultNavItems from "../../default-nav-items"
 
@@ -37,6 +37,10 @@ var styles = {
     marginTop: '4vh',
     padding: '4vh 0',
     textAlign: 'center',
+  }),
+
+  blockquote: css({
+    color: colorTextLight,
   }),
 
   heading: css({
@@ -147,7 +151,7 @@ const Page = (
       <div {...styles.wrapper} {...styles.pageContent}>
         <div {...styles.header} >
           <h1 {...styles.heading}>
-            {head.title} 
+              {head.title}
           </h1>
         </div>
         { header }
