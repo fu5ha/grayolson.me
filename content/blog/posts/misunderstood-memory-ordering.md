@@ -98,7 +98,7 @@ The answer is that *no, it does not.* We're only sharing a single atomic value b
 
 If the fact that even `Relaxed` stores and loads obey the last point makes you a bit puzzled, as it did for me, you may also be a terminally GPU-brained games programmer >:) (or perhaps destined to be one? 👀)
 
-Yes, simply using atomic accesses--even `Relaxed` ones!--obliges the implementation to always do its best to flush stores and make them visible to other threads as soon as possible. Extremely importantly, though, (foreshadowing!) it only obliges the implementation to do this for *specifically the single atomic that was accessed*<a href="#footnotes"><sup>3</sup></a>.
+Yes, simply using atomic accesses—even `Relaxed` ones!—obliges the implementation to always do its best to flush stores and make them visible to other threads as soon as possible. Extremely importantly, though, (foreshadowing!) it only obliges the implementation to do this for *specifically the single atomic that was accessed*<a href="#footnotes"><sup>3</sup></a>.
 
 Alright, let's up the ante of our example program a little bit
 
