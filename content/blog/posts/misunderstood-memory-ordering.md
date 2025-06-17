@@ -13,7 +13,9 @@ I want to talk about a specific and very important part of concurrent programmin
 Most atomic memory access operations require specifying one or more memory orderings, which modify the behavior of the access. From your current knowledge, which of the following is the purpose of these orderings?
 
 A. To specify which atomic accesses must come before others
+
 B. To determine whether or not there is a consistent ordering of modifications to the memory location being accessed atomically, no matter which thread is doing the access
+
 C. To determine with which priority (i.e. how "quickly") the atomic access must be performed
 
 The answer: none of the above!
@@ -89,10 +91,10 @@ Does this program behave any differently than before?
 
 The answer is that *no, it does not.* We're only sharing a single atomic value between the threads, so `Ordering`s have no effect. In both cases, we are guaranteed exactly the same things:
 
-a. Our program will not successfully reach the end of `main` without printing "Found 1!"
-b. Once thread 2 loads a `1`, it will not load a `0` again
-c. Once thread 1 writes the `1`, it will not load a `0` again
-d. The implementation will *do its best* to make the store on `FOO` in thread 1 visible to the load by thread 2 "as fast as it can"
+1. Our program will not successfully reach the end of `main` without printing "Found 1!"
+1. Once thread 2 loads a `1`, it will not load a `0` again
+1. Once thread 1 writes the `1`, it will not load a `0` again
+1. The implementation will *do its best* to make the store on `FOO` in thread 1 visible to the load by thread 2 "as fast as it can"
 
 If the fact that even `Relaxed` stores and loads obey the last point makes you a bit puzzled, as it did for me, you may also be a terminally GPU-brained games programmer >:) (or perhaps destined to be one? 👀)
 
