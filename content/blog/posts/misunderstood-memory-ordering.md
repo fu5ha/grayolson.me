@@ -18,15 +18,15 @@ C. To determine with which priority (i.e. how "quickly") the atomic access must 
 
 The answer: none of the above!
 
-For option (A), the specified memory ordering *has no effect* on whether an atomic access  performed on one thread will come before or after another atomic access of the same memory on another thread[<sup>1</sup>][#footnotes].
+For option (A), the specified memory ordering *has no effect* on whether an atomic access  performed on one thread will come before or after another atomic access of the same memory on another thread<a href="#footnotes"><sup>1</sup></a>.
 
-For option (B), simply the act of using atomic accesses on a single piece of memory, even with only `Relaxed` ordering, already ensures that there is only a single "total modification order," agreed upon by all threads, of that piece of memory[<sup>2</sup>][#footnotes].
+For option (B), simply the act of using atomic accesses on a single piece of memory, even with only `Relaxed` ordering, already ensures that there is only a single "total modification order," agreed upon by all threads, of that piece of memory<a href="#footnotes"><sup>2</sup></a>.
 
 And for option (C), the ordering once again *has no effect*—**all** atomic accesses occur with the exact same priority or "speed" (namely, "as fast as possible"). A `Relaxed` atomic write will propagate to other threads exactly as fast as a `SeqCst` write.
 
 ### So what *is* the point of all those memory `Ordering`s?
 
-Memory `Ordering`s only do *one thing*: synchronize between the *atomic accesses* made to *one atomic value*[<sup>3</sup>][#footnotes] with memory accesses (atomic or not) made to any *other* value. Memory `Ordering` *has no effect* on the specified behavior of a program if the only thing being shared between threads is a single atomic value[<sup>3</sup>][#footnotes]. But what does that mean in practice?
+Memory `Ordering`s only do *one thing*: synchronize between the *atomic accesses* made to *one atomic value*<a href="#footnotes"><sup>3</sup></a> with memory accesses (atomic or not) made to any *other* value. Memory `Ordering` *has no effect* on the specified behavior of a program if the only thing being shared between threads is a single atomic value<a href="#footnotes"><sup>3</sup></a>. But what does that mean in practice?
 
 Consider the following program:
 
@@ -96,7 +96,7 @@ d. The implementation will *do its best* to make the store on `FOO` in thread 1 
 
 If the fact that even `Relaxed` stores and loads obey the last point makes you a bit puzzled, as it did for me, you may also be a terminally GPU-brained games programmer >:) (or perhaps destined to be one? 👀)
 
-Yes, simply using atomic accesses--even `Relaxed` ones!--obliges the implementation to always do its best to flush stores and make them visible to other threads as soon as possible. Extremely importantly, though, (foreshadowing!) it only obliges the implementation to do this for *specifically the single atomic that was accessed*[<sup>3</sup>][#footnotes].
+Yes, simply using atomic accesses--even `Relaxed` ones!--obliges the implementation to always do its best to flush stores and make them visible to other threads as soon as possible. Extremely importantly, though, (foreshadowing!) it only obliges the implementation to do this for *specifically the single atomic that was accessed*<a href="#footnotes"><sup>3</sup></a>.
 
 Alright, let's up the ante of our example program a little bit
 
