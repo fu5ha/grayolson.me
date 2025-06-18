@@ -28,7 +28,7 @@ And for option (C), the ordering once again *has no effect*—**all** atomic acc
 
 ### So what *is* the point of all those memory `Ordering`s?
 
-Memory `Ordering`s only do *one thing*. They synchronize between the atomic accesses made to *one atomic value*<a href="#footnotes"><sup>3</sup></a> with memory accesses (atomic or not) made to any *other* value. Memory `Ordering` *has no effect* on the specified behavior of a program if the only thing being shared between threads is a single atomic value<a href="#footnotes"><sup>3</sup></a>. But what does that mean in practice?
+Memory `Ordering`s only do *one thing*. They synchronize the relative ordering between atomic accesses made on *one atomic value*<a href="#footnotes"><sup>3</sup></a> with memory accesses made to any *other* value (atomic or not). Memory `Ordering` *has no effect* on the specified behavior of a program if the only thing being shared between threads is a single atomic value<a href="#footnotes"><sup>3</sup></a>. But what does that mean in practice?
 
 Consider the following program:
 
