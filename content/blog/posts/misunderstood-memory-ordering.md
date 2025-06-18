@@ -6,7 +6,7 @@ featured: true
 ---
 [Rust Atomics and Locks](https://marabos.nl/atomics/), the [Rustonomicon's page on atomics](https://doc.rust-lang.org/stable/nomicon/atomics.html), much of the standard library's [documentation](https://doc.rust-lang.org/stable/std/sync/atomic/index.html), and many more sources already provide a wealth of great information about writing fast and correct concurrent programs in Rust.
 
-I want to talk about a specific and very important part of concurrent programming, one which I misunderstood for a long time, and one which I now see commonly misunderstood and misused when reading Rust code that uses atomics: memory [`Ordering`](https://doc.rust-lang.org/stable/std/sync/atomic/enum.Ordering.html).
+I want to talk about a specific and very important part of concurrent programming, one which I misunderstood for a long time, and one which I now see commonly misunderstood and misused when reading Rust code that uses atomics, which is memory [`Ordering`](https://doc.rust-lang.org/stable/std/sync/atomic/enum.Ordering.html).
 
 # wtf is a memory ordering?
 
@@ -28,7 +28,7 @@ And for option (C), the ordering once again *has no effect*—**all** atomic acc
 
 ### So what *is* the point of all those memory `Ordering`s?
 
-Memory `Ordering`s only do *one thing*: synchronize between the *atomic accesses* made to *one atomic value*<a href="#footnotes"><sup>3</sup></a> with memory accesses (atomic or not) made to any *other* value. Memory `Ordering` *has no effect* on the specified behavior of a program if the only thing being shared between threads is a single atomic value<a href="#footnotes"><sup>3</sup></a>. But what does that mean in practice?
+Memory `Ordering`s only do *one thing*. They synchronize between the atomic accesses made to *one atomic value*<a href="#footnotes"><sup>3</sup></a> with memory accesses (atomic or not) made to any *other* value. Memory `Ordering` *has no effect* on the specified behavior of a program if the only thing being shared between threads is a single atomic value<a href="#footnotes"><sup>3</sup></a>. But what does that mean in practice?
 
 Consider the following program:
 
@@ -109,8 +109,8 @@ use core::sync::atomic::Ordering;
 static FOO: AtomicUsize = AtomicUsize::new(0);
 
 fn thread1() {
-    for i in 0..200 {
-        let _ = FOO.store(i, Ordering::SeqCst);
+    for i in 1..=2_000_000 {
+        FOO.store(i, Ordering::SeqCst);
     }
 }
 
@@ -118,10 +118,11 @@ fn thread2() {
     let mut i = 0;
     loop {
         let val = FOO.load(Ordering::SeqCst);
-        if val >= 100 {
+        if val >= 1_000_000 {
             println!("Found {val} after {i} iters!");
             break;
         }
+        i = i + 1;
     }
 }
 
@@ -133,27 +134,33 @@ fn main() {
 }
 ```
 
-We have a very similar program structure to before. This time, however, on `thread1` we loop from `0..200` and store that value to `FOO`, while on `thread2`, we loop until we find `FOO >= 100`, and count how many iterations we've executed until we find that value.
+We have a very similar program structure to before. This time, however, on `thread1` we loop from `1..=2_000_000` and store that value to `FOO`, while on `thread2`, we loop until we find `FOO >= 1_000_000`, and count how many iterations we've executed until we find that value.
 
-This time, would changing those `Ordering::SeqCst`s to `Relaxed` change the defined behavior of our program?
+This time, would changing those `Ordering::SeqCst`s to `Relaxed` change the specified behavior of our program?
 
 Once again, *no it wouldn't!* (Sorry, I promise I'm done baiting you now...)
 
-We still only have a single atomic shared between threads, so, as before, the memory `Ordering`s will have no effect. I wanted to show this example, however, because it shows another semi-common misconception I've seen, which is the notion that "using `SeqCst` memory ordering stops the optimizer from removing those atomic stores". If that were the case, the compiler would be obliged to leave the `for` loop in `thread1` and actually perform 200 stores to `FOO`, in order. This is in fact not true at all, and the compiler is free to change `fn thread1()` to simply store `199` once:
+We still only have a single atomic shared between threads, so, as before, the memory `Ordering`s will have no effect. I wanted to show this example, however, because it shows another semi-common misconception I've seen, which is the notion that "using `SeqCst` memory ordering stops the optimizer from removing those atomic stores".
+
+If that were the case, the compiler would be obliged to leave the `for` loop in `thread1` and actually perform 2 million stores to `FOO`, in order. This is in fact not true at all, and the compiler is free to change `fn thread1()` to simply store `2_000_000` once:
 
 ```rust
 fn thread1() {
-    let _ = FOO.store(199, Ordering::SeqCst);
+    FOO.store(2_000_000, Ordering::SeqCst);
 }
 ```
 
-This transformation can be justified using the following thought experiment, one which is extremely useful and important when writing asynchronous code in general:
+This transformation can be justified using the following thought experiment, the structure of which is extremely useful and important when writing asynchronous code in general:
 
-*Is there **any** valid execution of the original program which would result in the transformed program's behavior, i.e. that no other thread observes the value of `FOO` between the first iteration and the final iteration of the `for` loop, leaving only the final value of `199` to be observed? **Yes,** that is very much a valid possible execution of the original program. Therefore, the transformation is justified*.
+*Is there **any** valid execution of the original program which would result in the transformed program's behavior, i.e. that no other thread observes the value of `FOO` between the first iteration and the final iteration of the `for` loop, leaving only the final value of `2_000_000` to be observed? **Yes,** that is very much a valid possible execution of the original program. Therefore, the transformation is justified*.
 
-This mindset of thinking in terms of "does there exist an execution of the program where the following happens..." is a very useful pattern. It also gets us thinking in terms of *what are the actual guarantees* about my program's behavior, and which are undefined?
+This mindset of thinking in terms of "is it *possible* for that there exists an execution of the program where the following happens..." is a very useful pattern. It also gets us thinking in terms of *what are the actual guarantees* about my program's behavior, and which are undefined?
 
-## No really, when does `Ordering` actually matter?
+#### In practice
+
+It is possible that changing memory ordering would change the *observed behavior* of a program like this on specific implementations, but the actual observed behavior must be a valid subset of the allowed behavior by the memory model. This means that you may observe correct behavior of your program even if it is not correct based on what is specified as correct, which can lead to very insidious bugs that only pop up when compilers are improved or you run your program on a different hardware architecture where the implementation is different in practice. For example, current implementations of both Rust and C/C++ compilers are very conservative with the optimizations they *actually* perform on atomic accesses compared to the ones that they are allowed to do by the rules of the memory model, so if you run the example above, they *will* actually perform the full loop on `thread1`. This combined with the fact that x86 famously gives "Acquire-Release" semantics for free on the hardware level means that it's possible to write very incorrect atomic synchronization code that would "work properly" on an x86 host but break completely on an aarch64 host. It also means that certain things I've said above about "speed" may not be true *in practice,* if it is convenient for the compiler and hardware to implement it differently in a way that still fulfills the spec.
+
+### No really, when does `Ordering` actually matter?
 
 Okay, let's finally get to an example where memory ordering matters. Suppose we want to load some data on one thread, put it a buffer shared with another thread, and then tell that other thread that we're done loading and that it can now read that data. If we were doing that in its most raw form, we may write something like the following:
 
@@ -172,7 +179,7 @@ fn thread1() {
         let buffer = unsafe { &mut* BUFFER.get() };
         *buffer = vec![10; 256];
     }
-    let _ = DONE_LOADING.store(true, Ordering::Relaxed);
+    DONE_LOADING.store(true, Ordering::Relaxed);
 }
 
 fn thread2() {
@@ -204,11 +211,13 @@ In fact, we *haven't* properly synchronized our access using the `DONE_LOADING` 
 
 *This* is the purpose of memory orderings, and why they're called *memory* orderings! They tell the implementation how we require accesses to *other* memory locations to be ordered *relative to* the atomic access.
 
+#### Foiled by the compiler
+
 When we use `Ordering::Relaxed`, we're telling the language that we don't care at all about when accesses to other memory locations happen relative to the atomic access. In fact, it would be an entirely valid transformation of the program to change `fn thread1()` to the following, if the compiler wanted to do so (note the ordering of the store and load relative to the write to the buffer!)
 
 ```rust
 fn thread1() {
-    let _ = DONE_LOADING.store(true, Ordering::Relaxed);
+    DONE_LOADING.store(true, Ordering::Relaxed);
 
     {
         let buffer = unsafe { &mut* BUFFER.get() };
@@ -217,9 +226,21 @@ fn thread1() {
 }
 ```
 
-If `BUFFER` were not shared between threads, this transformation would have no impact on the end result of the program, and thus the compiler is free to do it. And indeed, by using `Ordering::Relaxed`, we've told the compiler exactly that we're *not* using those atomic accesses to synchronize other memory access, so it's free to reorder them relative to other memory accesses as it pleases.
+If `BUFFER` were not shared between threads, this transformation would have no impact on the end result of the program, and thus the compiler would be free to do it. And indeed, by using `Ordering::Relaxed`, we've told the compiler exactly that we're *not* using those atomic accesses to synchronize other memory access, so it's free to reorder them relative to other memory accesses as it pleases.
 
-In order to make our program sound, we need to use memory `Ordering`s which *do* create a memory synchronization. We can use `Acquire` and `Release` for this, like so (note this is the same as the original program, with only the `Ordering`s changed.
+#### Foiled by the hardware
+
+In addition to the compiler, even if it didn't perform the above optimization, we also need to consider the hardware implementation itself. Many, but not all, of the design considerations around the Rust (C++) concurent memory model are [informed by the needs](https://research.swtch.com/hwmm) of the hardware which the language will be implemented on.
+
+One of the things that any hardware implementation wants to do is to minimize the need for invalidating cached memory. Any time we share memory between threads,
+we need to make sure that both threads see the same "view" of the memory they're sharing, even if, in hardware, the memory for each thread is a completely separate cached copy from all others.
+
+![arm/power memory model diagram](https://research.swtch.com/mem-weak.png)
+(diagram from [Russ Cox](https://research.swtch.com/hwmm#relaxed))
+
+Using atomic accesses in general, as discussed before, obliges the implementation to make sure it is synchronizing the reads and writes to that specific atomic value in memory. But it *doesn't* oblige the implementation to do the same for *all other memory*, not even for atomic accessses to *other* memory locations, since the hardware wants to avoid flushing any caching involved until we *really do* need it.
+
+In order to tell the implementation we are relying on it to make sure writes to all *other* shared memory is actually updated at a certain point in our program (and thus make our program sound), we need to use memory `Ordering`s which *do* create a memory synchronization. We can use `Acquire` and `Release` for this, like so (note this is the same as the original program, with only the `Ordering`s changed.
 
 ```rust
 #![feature(sync_unsafe_cell)]
@@ -260,7 +281,8 @@ fn main() {
 
 We've now told the compiler that any accesses that happened in source-order before the "`Release`-store" on thread 1 *must* also happen-before a subsequent "`Acquire`-load" of that stored value on thread 2. This is exactly the condition we need to ensure our program is valid.
 
-There's a lot more to be said about specific, tricky situations where certain memory orderings are needed to ensure correct program behavior, and I won't try to enumerate them here. Instead I wanted to plant this core seed in your head when thinking about memory orderings: the `Ordering` is about what we expect to happen *around* the atomic being accessed, **not** about the *atomic access itself*. With this premise in mind, I think you're in an excellent spot to go on to read [Mara's chapter on memory ordering](https://marabos.nl/atomics/memory-ordering.html) (and the rest of the book in general). The [Common Misconceptions](https://marabos.nl/atomics/memory-ordering.html#common-misconceptions) listed there are a great addendum to this post as well.
+There's a lot more to be said about specific, [tricky situations](https://research.swtch.com/plmm#cond) where certain memory orderings are needed to ensure correct program behavior, and I won't try to enumerate them here. Instead I wanted to plant this core seed in your head when thinking about memory orderings: the `Ordering` is about what we expect to happen *around* the atomic being accessed, **not** about the *atomic access itself*. With this premise in mind, I think you're in an excellent spot to go on to read [Mara's chapter on memory ordering](https://marabos.nl/atomics/memory-ordering.html) (and the rest of the book in general). The [Common Misconceptions](https://marabos.nl/atomics/memory-ordering.html#common-misconceptions) listed there are a great addendum to this post as well.
+
 # But why?
 
 This is a bit of a tangent, but it's about something I think is really important to talk about. A this point, many readers may be thinking something along the lines of, "Ugh, why do compiler engineers make this crap so hard?! Why doesn't the program just work like I wrote it??"
@@ -272,7 +294,7 @@ In my mind there's at least three important reasons for this.
 3. You want your program to run (fast) on multiple targets, with different operating systems, hardware architectures, etc.
 4. You want to be able to write programs that optimize in ways *you* know are correct, even when the compiler can't prove it
 
-Enter *undefined behavior*. Contrary to somewhat-popular belief, *undefined behavior* is **not**  "holes in the language where the designers just haven't bothered to specify behavior" Instead, these are [carefully crafted, artisan holes](https://i0.wp.com/mediachomp.com/wp-content/uploads/2024/04/amigara-fault-20.png?resize=768%2C1145&ssl=1) that have been *purposely left void*. These voids allow the compiler to justify implementation in a way that satisfies the points above. Without undefined behavior, the compiler wouldn't be able to provide the combination of flexibility, portability, and speed that we've come to expect. I highly recommend reading Ralf Jung's blog post about this, ["Undefined Behavior deserves a better reputation"](https://www.ralfj.de/blog/2021/11/18/ub-good-idea.html).
+Enter *undefined behavior*. Contrary to somewhat-popular belief, *undefined behavior* is **not** "holes in the language where the designers just haven't bothered to specify behavior" (at least, not when done well... which [isn't necessarily the case](https://blog.regehr.org/archives/213)). Instead, these are [carefully crafted, artisan holes](https://i0.wp.com/mediachomp.com/wp-content/uploads/2024/04/amigara-fault-20.png?resize=768%2C1145&ssl=1) that have been *purposely left void*. These voids allow the compiler to justify implementation in a way that satisfies the points above. Without undefined behavior, the compiler wouldn't be able to provide the combination of flexibility, portability, and speed that we've come to expect. I highly recommend reading Ralf Jung's blog post about this, ["Undefined Behavior deserves a better reputation"](https://www.ralfj.de/blog/2021/11/18/ub-good-idea.html).
 
 That being said, undefined behavior is a double-edged sword. It is extremely helpful to use it with care in the design of a language, but [going overboard has led to its current terrible reputation](https://raphlinus.github.io/programming/rust/2018/08/17/undefined-behavior.html). The fact that it is only possible to invoke undefined behavior by using `unsafe` Rust is a superpower. Wield it with the necessary care (and use the right memory `Ordering`)!
 
