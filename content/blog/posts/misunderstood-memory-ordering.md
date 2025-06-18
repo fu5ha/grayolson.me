@@ -162,7 +162,7 @@ It is possible that changing memory ordering would change the *observed behavior
 
 ### No really, when does `Ordering` actually matter?
 
-Okay, let's finally get to an example where memory ordering matters. Suppose we want to load some data on one thread, put it a buffer shared with another thread, and then tell that other thread that we're done loading and that it can now read that data. If we were doing that in its most raw form, we may write something like the following:
+Okay, let's finally get to an example where memory ordering matters. Suppose we want to load some data on one thread, put it in a buffer shared with another thread, and then tell that other thread that we're done loading and that it can now read that data. If we were doing that in its most raw form, we may write something like the following:
 
 ```rust
 #![feature(sync_unsafe_cell)]
